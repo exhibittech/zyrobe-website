@@ -9,6 +9,15 @@ outfits, try-on, AI stylist, planner, briefcase), pricing and FAQ.
 | Stack | Next.js 16 (App Router, static export), React 19, Tailwind CSS 4, GSAP ScrollTrigger + Lenis, React Three Fiber |
 | Hosting | Caddy on the `zyrobe-api` VM (GCP `zyrobe-production`, Mumbai) behind Cloudflare |
 | Live | https://zyrobe.com (`/privacy` and `/terms` are still served by the backend) |
+| Lighthouse (Oct 24) | desktop 96 / 96 / 100 / 100 · mobile 59 / 100 / 100 / 100 (perf / a11y / best practices / SEO) |
+
+## Performance notes
+
+- The WebGL hero only runs on a real GPU: software renderers (SwiftShader, llvmpipe), Data Saver, ≤4 CPU cores or
+  ≤3 GB RAM get the still collage, which is also what the server HTML shows first (fast LCP).
+- The display font is Noto Serif Display subset to the characters the site uses (`src/fonts`, ~12 KB per style).
+  Adding text with new non-Latin-1 characters? Re-subset from the system TTFs with `python3 -m fontTools.subset`.
+- Anything that loops forever must pause off screen (see the Download light sweep).
 
 ## Develop
 
@@ -53,6 +62,8 @@ bash deploy/deploy.sh --rollback  # back to the previous release
 - Releases live in `/var/www/zyrobe-site/releases/<time>-<sha>`; `current` is a symlink, switched atomically. The last 5 are kept.
 - The script checks whether the Google Play listing is public and builds the button as "Get it on Google Play"
   or "Coming soon to Google Play" accordingly. **Re-run it once Google approves the app.**
+- Validate Caddy changes as the `caddy` user (`sudo -u caddy caddy validate --config /etc/caddy/Caddyfile`).
+  Validating with plain `sudo` creates missing log files owned by root, and the next reload then fails.
 - Caddy config lives in the backend repo (`zyrobe-backend/deploy/caddy/Caddyfile`, reinstalled by its deploy);
   `deploy/Caddyfile.reference` is a copy. `/_next/static` is cached for a year, `/media` for 7 days, pages revalidate.
 - Facts on the site (plans, prices, free credits) come from `src/lib/site.ts`; keep it in sync with
