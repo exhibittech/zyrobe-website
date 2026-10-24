@@ -72,6 +72,7 @@ export default function Hero() {
   const lookNameRef = useRef<HTMLSpanElement>(null);
   const dimRef = useRef<HTMLDivElement>(null);
   const darkRef = useRef<HTMLDivElement>(null);
+  const darkCamRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const progress = useRef(0);
   const mode = useMode();
@@ -85,6 +86,21 @@ export default function Hero() {
     const io = new IntersectionObserver(([e]) => setActive(e.isIntersecting), { rootMargin: "80px" });
     io.observe(el);
     return () => io.disconnect();
+  }, []);
+
+  // The hero's last frame is the Questions section's first: same dark satin, same camera framing and shade.
+  useEffect(() => {
+    const cam = darkCamRef.current;
+    if (!cam) return;
+    const frame = () => {
+      const W = innerWidth, H = innerHeight;
+      const portrait = W / H < 0.8;
+      const u = portrait ? Math.min(W / 390, H / 844) : Math.min(W / 1920, H / 1080);
+      cam.style.transform = `translate3d(${(-60 * u).toFixed(1)}px,${(14 * u).toFixed(1)}px,0) scale(1.16) rotate(1.5deg)`;
+    };
+    frame();
+    addEventListener("resize", frame);
+    return () => removeEventListener("resize", frame);
   }, []);
 
   // The label under the front outfit follows the carousel (DOM writes only, no re-render).
@@ -123,9 +139,10 @@ export default function Hero() {
           .fromTo(captionRef.current, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.08 }, 0.36)
           .fromTo(labelRef.current, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.06 }, 0.42)
           .to([captionRef.current, labelRef.current], { opacity: 0, y: -12, duration: 0.06 }, 0.87)
-          // Lights down: the edges go first, the last look last, into the dark of the next section.
+          // Lights down: the edges go first, then the scene dissolves into the dark satin of the next
+          // section, complete exactly when this stage starts to scroll away.
           .fromTo(dimRef.current, { opacity: 0 }, { opacity: 1, duration: 0.08 }, 0.86)
-          .fromTo(darkRef.current, { opacity: 0 }, { opacity: 1, duration: 0.07 }, 0.93);
+          .fromTo(darkRef.current, { opacity: 0 }, { opacity: 1, duration: 0.08 }, 0.92);
       }
     },
     { scope: sectionRef, dependencies: [mode] },
@@ -253,7 +270,13 @@ export default function Hero() {
           aria-hidden
           className="pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(ellipse_62%_58%_at_50%_54%,rgb(36_29_23/0)_0%,rgb(36_29_23/.5)_58%,#241d17_100%)] opacity-0"
         />
-        <div ref={darkRef} aria-hidden className="pointer-events-none absolute inset-0 z-20 bg-[#241d17] opacity-0" />
+        <div ref={darkRef} aria-hidden className="pointer-events-none absolute inset-0 z-20 overflow-hidden bg-[#241d17] opacity-0">
+          <div ref={darkCamRef} className="absolute -inset-[9%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/media/brand/satin-dark.webp" alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+          </div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_50%,rgba(10,7,5,.55),rgba(10,7,5,0)_70%),linear-gradient(180deg,rgba(8,6,4,.45),rgba(8,6,4,0)_30%,rgba(8,6,4,0)_70%,rgba(8,6,4,.5))]" />
+        </div>
 
         {story && (
           <div
@@ -268,11 +291,11 @@ export default function Hero() {
           </div>
         )}
       </div>
-      {/* Overlaps the top of the dark section below so the hand-off has no seam. */}
+      {/* Evens out the join with the dark satin below (that image is a touch lighter at its top edge). */}
       {story && (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-full z-10 h-[45vh] bg-[linear-gradient(180deg,#241d17_0%,rgb(36_29_23/.85)_35%,rgb(36_29_23/0)_100%)] motion-reduce:hidden"
+          className="pointer-events-none absolute inset-x-0 top-full z-10 h-[14vh] bg-[linear-gradient(180deg,rgba(8,6,4,.11),rgba(8,6,4,0))] motion-reduce:hidden"
         />
       )}
     </section>
