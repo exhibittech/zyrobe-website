@@ -29,6 +29,8 @@ const T_START = 0.55, T_END = HIT + 0.25;
 const P_DIVE = 0.8; // the dive gets the last fifth of the scroll, the rest plays at film pace
 const timeAt = (p: number) => (p < P_DIVE ? L(T_START, DIVE, p / P_DIVE) : L(DIVE, T_END, (p - P_DIVE) / (1 - P_DIVE)));
 
+const BAND_MASK = "linear-gradient(112deg, transparent 22%, rgba(0,0,0,.55) 38%, #000 50%, rgba(0,0,0,.55) 62%, transparent 78%)";
+const EDGE_MASK = "linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent)";
 const LINE1 = "So many questions.";
 const LINE2 = "One answer";
 
@@ -109,7 +111,7 @@ export default function Questions() {
         portrait = W / H < 0.8;
         u = portrait ? Math.min(W / 390, H / 844) : Math.min(W / 1920, H / 1080);
         stage.style.setProperty("--bub", `${(portrait ? 14.5 : 36) * u}px`);
-        stage.style.setProperty("--line", `${(portrait ? 44 : 96) * u}px`);
+        stage.style.setProperty("--line", `${(portrait ? 38 : 96) * u}px`);
         // Measure the full stop with the wrapper untransformed.
         const prev = qWrap.style.transform;
         qWrap.style.transform = "none";
@@ -270,8 +272,12 @@ export default function Questions() {
             className="absolute inset-0 overflow-hidden will-change-transform"
             style={{
               opacity: 0.3,
-              WebkitMaskImage: "linear-gradient(112deg, transparent 22%, rgba(0,0,0,.55) 38%, #000 50%, rgba(0,0,0,.55) 62%, transparent 78%)",
-              maskImage: "linear-gradient(112deg, transparent 22%, rgba(0,0,0,.55) 38%, #000 50%, rgba(0,0,0,.55) 62%, transparent 78%)",
+              // Diagonal band, intersected with a horizontal fade so the moving layer's side edges never show
+              // (on tall phone screens the 112deg band alone reaches the left/right edges).
+              WebkitMaskImage: `${BAND_MASK}, ${EDGE_MASK}`,
+              WebkitMaskComposite: "source-in",
+              maskImage: `${BAND_MASK}, ${EDGE_MASK}`,
+              maskComposite: "intersect",
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
