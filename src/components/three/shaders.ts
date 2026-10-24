@@ -122,12 +122,19 @@ void main() {
 export const garmentFragment = /* glsl */ `
 uniform sampler2D uMap;
 uniform float uOpacity;
+uniform float uFog;     // 0 = in focus, 1 = lost in the haze at the back of the ring
+uniform float uBlur;    // mip bias: a cheap depth-of-field
+uniform float uBright;
 varying vec2 vUv;
 varying float vShade;
 void main() {
-  vec4 c = texture2D(uMap, vUv);
+  vec4 c = texture2D(uMap, vUv, uBlur);
   if (c.a < 0.003) discard;
-  gl_FragColor = vec4(c.rgb * vShade, c.a * uOpacity);
+  vec3 col = c.rgb * vShade * uBright;
+  float l = dot(col, vec3(0.299, 0.587, 0.114));
+  col = mix(col, vec3(l), uFog * 0.75);
+  col = mix(col, vec3(0.925, 0.886, 0.827), uFog * 0.8); // satin haze #ece2d3
+  gl_FragColor = vec4(col, c.a * uOpacity);
 }
 `;
 
@@ -158,32 +165,14 @@ void main() {
 }
 `;
 
-/** Wardrobe tile behind a sorted garment: paper card with rounded corners and a soft lift shadow. */
-export const cardFragment = /* glsl */ `
+/** Soft contact shadow on the (invisible) floor under a look. */
+export const floorFragment = /* glsl */ `
 uniform float uOpacity;
-uniform vec2 uSize;   // card size in world units
-uniform float uPad;   // plane = card + 2 * pad (room for the shadow)
 varying vec2 vUv;
-float sdRound(vec2 p, vec2 b, float r) {
-  vec2 q = abs(p) - b + r;
-  return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - r;
-}
 void main() {
-  vec2 full = uSize + 2.0 * uPad;
-  vec2 p = (vUv - 0.5) * full;
-  float r = 0.09 * min(uSize.x, uSize.y);
-  float d = sdRound(p, uSize * 0.5, r);
-  float aa = fwidth(d);
-  float card = 1.0 - smoothstep(-aa, aa, d);
-  // Lift shadow: tucked under the card, falling downwards.
-  float ds = sdRound(p - vec2(0.0, -uPad * 0.38), uSize * 0.5 - vec2(uPad * 0.18), r);
-  float sh = (1.0 - smoothstep(-uPad * 0.45, uPad * 0.95, ds)) * 0.17;
-  float border = 1.0 - smoothstep(aa * 0.6, aa * 1.9, abs(d + aa * 1.3));
-  vec3 paper = mix(vec3(0.984, 0.975, 0.957), vec3(1.0, 0.996, 0.988), vUv.y);
-  paper = mix(paper, vec3(0.86, 0.82, 0.76), border * 0.5);
-  vec3 shadowC = vec3(0.18, 0.11, 0.07);
-  float a = card + sh * (1.0 - card);
-  vec3 col = (paper * card + shadowC * sh * (1.0 - card)) / max(a, 1e-4);
-  gl_FragColor = vec4(col, a * uOpacity);
+  vec2 p = (vUv - 0.5) * 2.0;
+  float d = length(p);
+  float a = pow(1.0 - smoothstep(0.0, 1.0, d), 1.8);
+  gl_FragColor = vec4(0.2, 0.13, 0.08, a * uOpacity);
 }
 `;
