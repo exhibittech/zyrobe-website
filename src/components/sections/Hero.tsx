@@ -135,8 +135,13 @@ export default function Hero() {
           </div>
         )}
 
-        {mode === "static" && (
-          <div aria-hidden className="absolute inset-0">
+        {/* The still collage is in the server HTML (fast first paint); when the WebGL scene is ready it fades out. */}
+        {(
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 transition-opacity duration-[1200ms] ease-silk"
+            style={{ opacity: mode === "webgl" && ready ? 0 : 1 }}
+          >
             {COLLAGE.map((c) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
