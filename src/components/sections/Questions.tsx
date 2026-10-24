@@ -252,7 +252,17 @@ export default function Questions() {
       id="questions"
       aria-labelledby="questions-title"
       className="relative bg-[#241d17] text-[#efe4d2]"
-      style={{ height: reduced ? "auto" : "360vh" }}
+      style={
+        reduced
+          ? { height: "auto" }
+          : {
+              height: "360vh",
+              // Overlap the hero's last 24vh and feather in, so its dark satin cross-fades into this one (no seam).
+              marginTop: "-24vh",
+              WebkitMaskImage: "linear-gradient(to bottom, transparent 0, #000 24vh)",
+              maskImage: "linear-gradient(to bottom, transparent 0, #000 24vh)",
+            }
+      }
     >
       <h2 id="questions-title" className="sr-only">
         So many questions. One answer.
