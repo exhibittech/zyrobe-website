@@ -131,11 +131,16 @@ function Stage() {
     const gen = q("[data-gen]");
     tl.to(gen, { scale: 0.95, duration: 0.025 }, 0.41).to(gen, { scale: 1, duration: 0.03 }, 0.44);
     const scan = q("[data-scan]");
-    tl.fromTo(scan, { yPercent: -110, autoAlpha: 1 }, { yPercent: 370, duration: 0.18, ease: "power1.inOut" }, 0.42).set(scan, { autoAlpha: 0 }, 0.6);
+    tl.set(scan, { yPercent: -110 }, 0)
+      .set(scan, { autoAlpha: 1 }, 0.42)
+      .to(scan, { yPercent: 370, duration: 0.18, ease: "power1.inOut" }, 0.42)
+      .set(scan, { autoAlpha: 0 }, 0.6);
     tl.to(q("[data-glow]"), { opacity: 1, duration: 0.08 }, 0.52);
-    const sparks = q("svg.text-gold");
-    tl.fromTo(sparks, { scale: 0, rotate: -45, autoAlpha: 0 }, { scale: 1, rotate: 0, autoAlpha: 1, duration: 0.05, stagger: 0.02, ease: "back.out(3)" }, 0.5)
-      .to(sparks, { scale: 0, autoAlpha: 0, duration: 0.05, stagger: 0.02 }, 0.62);
+    // One tween per element (staggered tweens in a scrubbed timeline show later elements' end state early).
+    q("svg.text-gold").forEach((el, i) => {
+      tl.fromTo(el, { scale: 0, rotate: -45, autoAlpha: 0 }, { scale: 1, rotate: 0, autoAlpha: 1, duration: 0.05, ease: "back.out(3)" }, 0.5 + i * 0.02)
+        .to(el, { scale: 0, autoAlpha: 0, duration: 0.05 }, 0.62 + i * 0.02);
+    });
 
     // Ready
     popOut(tl, q("[data-toast]"), 0.62, { reach: 0.4 });
