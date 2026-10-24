@@ -1,0 +1,894 @@
+{
+ "/media/brand/feature.webp": {
+  "h": 500,
+  "w": 1024
+ },
+ "/media/brand/grain.png": {
+  "h": 256,
+  "w": 256
+ },
+ "/media/brand/icon.webp": {
+  "h": 512,
+  "w": 512
+ },
+ "/media/brand/logo-sm.webp": {
+  "h": 176,
+  "w": 520
+ },
+ "/media/brand/logo.webp": {
+  "h": 473,
+  "w": 1400
+ },
+ "/media/brand/satin-dark.webp": {
+  "h": 1112,
+  "w": 2400
+ },
+ "/media/brand/satin-full.webp": {
+  "h": 1118,
+  "w": 2400
+ },
+ "/media/brand/satin-md.webp": {
+  "h": 593,
+  "w": 1280
+ },
+ "/media/brand/satin-soft.webp": {
+  "h": 1112,
+  "w": 2400
+ },
+ "/media/brand/satin.webp": {
+  "h": 1186,
+  "w": 2560
+ },
+ "/media/brand/silk.webp": {
+  "h": 1080,
+  "w": 1920
+ },
+ "/media/comps/act_brunch.webp": {
+  "h": 104,
+  "w": 272
+ },
+ "/media/comps/act_casual.webp": {
+  "h": 104,
+  "w": 261
+ },
+ "/media/comps/act_date.webp": {
+  "h": 104,
+  "w": 230
+ },
+ "/media/comps/act_dinner.webp": {
+  "h": 100,
+  "w": 265
+ },
+ "/media/comps/act_event.webp": {
+  "h": 104,
+  "w": 246
+ },
+ "/media/comps/act_formal.webp": {
+  "h": 104,
+  "w": 268
+ },
+ "/media/comps/act_gym.webp": {
+  "h": 104,
+  "w": 202
+ },
+ "/media/comps/act_leisure.webp": {
+  "h": 104,
+  "w": 273
+ },
+ "/media/comps/act_meeting.webp": {
+  "h": 100,
+  "w": 291
+ },
+ "/media/comps/act_office.webp": {
+  "h": 100,
+  "w": 254
+ },
+ "/media/comps/act_shopping.webp": {
+  "h": 104,
+  "w": 306
+ },
+ "/media/comps/act_travel.webp": {
+  "h": 104,
+  "w": 250
+ },
+ "/media/comps/card_design.webp": {
+  "h": 388,
+  "w": 463
+ },
+ "/media/comps/card_pack.webp": {
+  "h": 388,
+  "w": 464
+ },
+ "/media/comps/card_vto.webp": {
+  "h": 193,
+  "w": 900
+ },
+ "/media/comps/chip_ai.webp": {
+  "h": 70,
+  "w": 284
+ },
+ "/media/comps/chip_evening.webp": {
+  "h": 70,
+  "w": 330
+ },
+ "/media/comps/chip_mumbai.webp": {
+  "h": 69,
+  "w": 495
+ },
+ "/media/comps/chip_soho.webp": {
+  "h": 69,
+  "w": 257
+ },
+ "/media/comps/chip_tonight.webp": {
+  "h": 70,
+  "w": 204
+ },
+ "/media/comps/ocard_1.webp": {
+  "h": 592,
+  "w": 459
+ },
+ "/media/comps/ocard_2.webp": {
+  "h": 592,
+  "w": 460
+ },
+ "/media/comps/ocard_3.webp": {
+  "h": 592,
+  "w": 459
+ },
+ "/media/comps/ocard_4.webp": {
+  "h": 592,
+  "w": 460
+ },
+ "/media/comps/ootd.webp": {
+  "h": 650,
+  "w": 900
+ },
+ "/media/comps/pill_date.webp": {
+  "h": 68,
+  "w": 226
+ },
+ "/media/comps/pill_photo.webp": {
+  "h": 68,
+  "w": 195
+ },
+ "/media/comps/queue_card.webp": {
+  "h": 226,
+  "w": 900
+ },
+ "/media/comps/sneaker_hero.webp": {
+  "h": 680,
+  "w": 500
+ },
+ "/media/comps/toast_saved.webp": {
+  "h": 202,
+  "w": 900
+ },
+ "/media/comps/toast_success.webp": {
+  "h": 202,
+  "w": 900
+ },
+ "/media/comps/toast_tryon.webp": {
+  "h": 202,
+  "w": 900
+ },
+ "/media/comps/wcard_jacket.webp": {
+  "h": 683,
+  "w": 463
+ },
+ "/media/comps/wcard_jeans.webp": {
+  "h": 686,
+  "w": 462
+ },
+ "/media/comps/wcard_tshirt.webp": {
+  "h": 683,
+  "w": 462
+ },
+ "/media/comps/yl_piece_1.webp": {
+  "h": 426,
+  "w": 316
+ },
+ "/media/comps/yl_piece_2.webp": {
+  "h": 426,
+  "w": 316
+ },
+ "/media/comps/yl_piece_3.webp": {
+  "h": 426,
+  "w": 315
+ },
+ "/media/comps/yl_quote.webp": {
+  "h": 462,
+  "w": 900
+ },
+ "/media/feat/ai_loader_sheet.webp": {
+  "h": 2143,
+  "w": 1080
+ },
+ "/media/feat/bf_0.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/bf_1.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/bf_2.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/bf_bus.webp": {
+  "h": 88,
+  "w": 299
+ },
+ "/media/feat/bf_dates.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/bf_dep.webp": {
+  "h": 160,
+  "w": 456
+ },
+ "/media/feat/bf_dur.webp": {
+  "h": 88,
+  "w": 421
+ },
+ "/media/feat/bf_full.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/bf_list.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/bf_ret.webp": {
+  "h": 160,
+  "w": 456
+ },
+ "/media/feat/bf_sheet.webp": {
+  "h": 1745,
+  "w": 1080
+ },
+ "/media/feat/bf_vac.webp": {
+  "h": 88,
+  "w": 300
+ },
+ "/media/feat/cam_ui.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/dest_pill.webp": {
+  "h": 84,
+  "w": 270
+ },
+ "/media/feat/dt_0_0.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_0_1.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_0_2.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_0_3.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_1_0.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_1_1.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_1_2.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_1_3.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_2_0.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_2_1.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_2_2.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/dt_2_3.webp": {
+  "h": 202,
+  "w": 190
+ },
+ "/media/feat/ess_list_0.webp": {
+  "h": 657,
+  "w": 954
+ },
+ "/media/feat/ess_list_1.webp": {
+  "h": 657,
+  "w": 954
+ },
+ "/media/feat/ess_list_2.webp": {
+  "h": 657,
+  "w": 954
+ },
+ "/media/feat/ess_list_3.webp": {
+  "h": 657,
+  "w": 954
+ },
+ "/media/feat/hero_wardrobe.webp": {
+  "h": 1500,
+  "w": 1200
+ },
+ "/media/feat/lb_content.webp": {
+  "h": 2220,
+  "w": 900
+ },
+ "/media/feat/lb_sheet.webp": {
+  "h": 2142,
+  "w": 1080
+ },
+ "/media/feat/lb_weather.webp": {
+  "h": 162,
+  "w": 884
+ },
+ "/media/feat/p_bus.webp": {
+  "h": 88,
+  "w": 300
+ },
+ "/media/feat/p_dur.webp": {
+  "h": 87,
+  "w": 428
+ },
+ "/media/feat/p_note.webp": {
+  "h": 142,
+  "w": 954
+ },
+ "/media/feat/p_wx_pill.webp": {
+  "h": 84,
+  "w": 338
+ },
+ "/media/feat/pf_0.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pf_1.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pf_dates.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pf_full.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pf_sheet.webp": {
+  "h": 1745,
+  "w": 1080
+ },
+ "/media/feat/ph_bedroom_wardrobe.webp": {
+  "h": 728,
+  "w": 700
+ },
+ "/media/feat/ph_shirt_drawer.webp": {
+  "h": 728,
+  "w": 700
+ },
+ "/media/feat/ph_travel_bag.webp": {
+  "h": 728,
+  "w": 700
+ },
+ "/media/feat/ph_walk_in_closet.webp": {
+  "h": 728,
+  "w": 700
+ },
+ "/media/feat/pl_list.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pt_items.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pt_outfits.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pt_outfits2.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pt_saved.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/pt_trip.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/room_bg.webp": {
+  "h": 675,
+  "w": 1200
+ },
+ "/media/feat/room_cam.webp": {
+  "h": 1200,
+  "w": 900
+ },
+ "/media/feat/st_detail_0.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_detail_1.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_detail_2.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_detail_3.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_detail_4.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_detail_5.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_grid.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_item_0.webp": {
+  "h": 436,
+  "w": 315
+ },
+ "/media/feat/st_item_1.webp": {
+  "h": 436,
+  "w": 314
+ },
+ "/media/feat/st_item_2.webp": {
+  "h": 436,
+  "w": 314
+ },
+ "/media/feat/st_item_3.webp": {
+  "h": 436,
+  "w": 315
+ },
+ "/media/feat/st_item_4.webp": {
+  "h": 436,
+  "w": 314
+ },
+ "/media/feat/st_saved.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_sheet.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/st_sheet_cut.webp": {
+  "h": 1707,
+  "w": 1080
+ },
+ "/media/feat/st_toast.webp": {
+  "h": 211,
+  "w": 996
+ },
+ "/media/feat/tp2_toast.webp": {
+  "h": 210,
+  "w": 996
+ },
+ "/media/feat/tp_ai_loader.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_empty.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_ess_0.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_ess_1.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_ess_2.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_ess_t0.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_ess_t1.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_ess_t2.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_ess_t3.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_items.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_outfits.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_packed.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/feat/tp_toast.webp": {
+  "h": 212,
+  "w": 996
+ },
+ "/media/feat/wx_pill.webp": {
+  "h": 84,
+  "w": 338
+ },
+ "/media/flat/g00.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g01.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g02.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g04.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g05.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g06.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g07.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/flat/g08.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g09.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/flat/g10.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/flat/g11.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g12.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/flat/g13.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g14.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g15.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g16.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/flat/g17.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/flat/g18.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g19.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g20.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/flat/g21.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/flat/g22.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c00.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c01.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c02.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c04.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c05.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c06.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c08.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c09.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/garments/c11.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c12.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/garments/c13.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c14.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c15.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c16.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/garments/c17.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/garments/c18.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c19.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c20.webp": {
+  "h": 400,
+  "w": 315
+ },
+ "/media/garments/c21.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/garments/c22.webp": {
+  "h": 399,
+  "w": 315
+ },
+ "/media/home/act1.webp": {
+  "h": 248,
+  "w": 228
+ },
+ "/media/home/act2.webp": {
+  "h": 248,
+  "w": 228
+ },
+ "/media/home/act3.webp": {
+  "h": 248,
+  "w": 228
+ },
+ "/media/home/act4.webp": {
+  "h": 248,
+  "w": 228
+ },
+ "/media/home/base.webp": {
+  "h": 1947,
+  "w": 900
+ },
+ "/media/home/cal.webp": {
+  "h": 732,
+  "w": 1015
+ },
+ "/media/home/greet.webp": {
+  "h": 230,
+  "w": 510
+ },
+ "/media/home/nav.webp": {
+  "h": 266,
+  "w": 1126
+ },
+ "/media/home/plan.webp": {
+  "h": 84,
+  "w": 268
+ },
+ "/media/home/rack.webp": {
+  "h": 328,
+  "w": 464
+ },
+ "/media/home/stat1.webp": {
+  "h": 355,
+  "w": 485
+ },
+ "/media/home/stat2.webp": {
+  "h": 355,
+  "w": 485
+ },
+ "/media/home/today.webp": {
+  "h": 178,
+  "w": 182
+ },
+ "/media/home/vibe.webp": {
+  "h": 237,
+  "w": 912
+ },
+ "/media/home/wardh.webp": {
+  "h": 120,
+  "w": 1022
+ },
+ "/media/screens/01_home.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/02_wardrobe.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/03_outfits.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/04_stylist.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/09_outfit_detail.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/11_item_detail.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/activities.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/confirm_capture.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/day_by_day.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/home_full.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/style_plan.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/screens/your_look.webp": {
+  "h": 1558,
+  "w": 720
+ },
+ "/media/store/1_home.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/store/2_wardrobe.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/store/3_outfits.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/store/4_daily_ideas.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/store/5_ai_stylist.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/store/6_weekly_plan.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/store/7_trip_packing.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/store/8_item_details.webp": {
+  "h": 1280,
+  "w": 720
+ },
+ "/media/video/planner": {
+  "fps": 60,
+  "frames": 269,
+  "seconds": 4.48
+ },
+ "/media/video/planner-poster.webp": {
+  "h": 1299,
+  "w": 600
+ },
+ "/media/video/stylist": {
+  "fps": 60,
+  "frames": 526,
+  "seconds": 8.77
+ },
+ "/media/video/stylist-poster.webp": {
+  "h": 1299,
+  "w": 600
+ },
+ "/media/video/trip-loader": {
+  "fps": 60,
+  "frames": 268,
+  "seconds": 4.47
+ },
+ "/media/video/trip-loader-poster.webp": {
+  "h": 1298,
+  "w": 600
+ },
+ "/media/video/wardrobe-ai": {
+  "fps": 60,
+  "frames": 304,
+  "seconds": 5.07
+ },
+ "/media/video/wardrobe-ai-poster.webp": {
+  "h": 1299,
+  "w": 600
+ }
+}
