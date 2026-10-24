@@ -145,7 +145,7 @@ export default function Hero() {
                 alt=""
                 width={315}
                 height={399}
-                loading="lazy"
+                decoding="async"
                 className={`absolute h-auto drop-shadow-[0_18px_22px_rgb(46_28_18/.22)] ${c.cls}`}
               />
             ))}

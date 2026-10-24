@@ -64,8 +64,8 @@ save(f"{S}/brand2/satin_soft.jpg", "brand/satin-soft.webp", max_w=2400, q=78)
 save(f"{S}/brand2/satin_full.jpg", "brand/satin-full.webp", max_w=2400, q=78)
 save(f"{S}/brand2/satin_dark.jpg", "brand/satin-dark.webp", max_w=2400, q=78)
 save(f"{S}/brand/silk.jpg", "brand/silk.webp", max_w=2048, q=78)
-Image.open(f"{S}/brand/grain.png").convert("L").crop((0, 0, 256, 256)).save(os.path.join(OUT, "brand/grain.png"), optimize=True)
-manifest["/media/brand/grain.png"] = {"w": 256, "h": 256}
+Image.open(f"{S}/brand/grain.png").convert("L").crop((0, 0, 256, 256)).save(os.path.join(OUT, "brand/grain.webp"), "WEBP", quality=60, method=6)
+manifest["/media/brand/grain.webp"] = {"w": 256, "h": 256}
 save(f"{args.play}/zyrobe-feature-1024x500.png", "brand/feature.webp", q=88)
 save(f"{args.play}/zyrobe-icon-512.png", "brand/icon.webp", q=90)
 

@@ -1,16 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Lato, Noto_Serif_Display } from "next/font/google";
+import { Lato } from "next/font/google";
+import localFont from "next/font/local";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import JsonLd from "@/components/closing/JsonLd";
 import { COMPANY, CONTACT_EMAIL, PLAY_LIVE, PLAY_URL, PROMISE, SHORT_DESCRIPTION, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const display = Noto_Serif_Display({
+// Noto Serif Display (the launch film's display face), subset to the characters the site uses
+// (Latin-1, typographic punctuation, ₹): ~12 KB per style instead of ~170 KB from Google Fonts.
+const display = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["300", "400"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/NotoSerifDisplay-Light.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/NotoSerifDisplay-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/NotoSerifDisplay-LightItalic.woff2", weight: "300", style: "italic" },
+  ],
   display: "swap",
+  fallback: ["Georgia", "serif"],
 });
 
 const body = Lato({
