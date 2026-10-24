@@ -107,7 +107,7 @@ export default function Finale() {
             From the first photo to a packed suitcase, all from the clothes you already own.
           </p>
           <Toast data="0" src="/media/comps/toast_tryon.webp" alt="Try-On Ready! Your virtual look has been generated." className="left-0 top-[72%] -rotate-3 xl:left-[3%]" />
-          <Toast data="1" src="/media/comps/toast_success.webp" alt="Success: weekly plan saved to your calendar!" className="right-0 top-[44%] rotate-2 xl:right-[3%]" />
+          <Toast data="1" src="/media/comps/toast_success.webp" alt="Success: weekly plan saved to your calendar!" className="right-0 top-[66%] rotate-2 xl:right-[3%]" />
         </div>
 
         <div
