@@ -42,9 +42,10 @@ zyrobe.com {
 		-Server
 	}
 
-	# /privacy/ -> /privacy (pages are exported as <name>.html)
-	@trailing path_regexp trailing ^(.+)/$
-	redir @trailing {re.trailing.1} 308
+	# /privacy/ -> /privacy (pages are exported as <name>.html). Only plain path segments match and the
+	# target is an absolute URL on our own host, so "//evil.com/" can never become an off-site redirect.
+	@trailing path_regexp trailing ^(/[A-Za-z0-9_-][A-Za-z0-9_./-]*)/$
+	redir @trailing https://zyrobe.com{re.trailing.1}{?query} 308
 
 	handle {
 		root * /var/www/zyrobe-site/current
