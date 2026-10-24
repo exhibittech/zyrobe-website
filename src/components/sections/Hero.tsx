@@ -10,16 +10,28 @@ const HeroScene = dynamic(() => import("@/components/three/HeroScene"), { ssr: f
 
 type Mode = "pending" | "webgl" | "static";
 
-// Decided once on the client: WebGL story, or the still collage (reduced motion / no WebGL).
+// Decided once on the client: WebGL story, or the still collage (reduced motion, no WebGL, a software
+// renderer, Data Saver, or a low-end phone that would drop frames).
 let detected: Mode | null = null;
-function detectMode(): Mode {
-  if (detected) return detected;
-  let gl = false;
+function canRunWebGL(): boolean {
+  const nav = navigator as Navigator & { deviceMemory?: number; connection?: { saveData?: boolean } };
+  if (nav.connection?.saveData) return false;
+  if ((nav.hardwareConcurrency ?? 8) <= 4 || (nav.deviceMemory ?? 8) <= 3) return false;
   try {
     const c = document.createElement("canvas");
-    gl = !!(c.getContext("webgl2") || c.getContext("webgl"));
-  } catch {}
-  detected = gl && !prefersReducedMotion() ? "webgl" : "static";
+    const gl = (c.getContext("webgl2") || c.getContext("webgl")) as WebGLRenderingContext | null;
+    if (!gl) return false;
+    const info = gl.getExtension("WEBGL_debug_renderer_info");
+    const renderer = String(info ? gl.getParameter(info.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+    gl.getExtension("WEBGL_lose_context")?.loseContext();
+    return !/swiftshader|llvmpipe|softpipe|software|basic render/i.test(renderer);
+  } catch {
+    return false;
+  }
+}
+function detectMode(): Mode {
+  if (detected) return detected;
+  detected = !prefersReducedMotion() && canRunWebGL() ? "webgl" : "static";
   return detected;
 }
 const noop = () => () => {};

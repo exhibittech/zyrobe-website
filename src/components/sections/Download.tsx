@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import PlayButton from "@/components/ui/PlayButton";
-import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, useGSAP, prefersReducedMotion, ScrollTrigger } from "@/lib/gsap";
 import { SHORT_DESCRIPTION, TAGLINE } from "@/lib/site";
 
 // Cut-outs drifting at the edges: [file, left%, top%, width (vw, desktop), rotate, parallax depth, mobile]
@@ -29,7 +29,9 @@ export default function Download() {
         gsap.fromTo(el, { yPercent: 40 * depth }, { yPercent: -40 * depth, rotate: `+=${8 * depth}`, ease: "none", scrollTrigger: scrub });
       });
 
-      gsap.fromTo(q("[data-sheen]"), { xPercent: -22 }, { xPercent: 22, duration: 9, ease: "sine.inOut", repeat: -1, yoyo: true });
+      // The light sweep loops forever, so it only runs while the section is on screen.
+      const sheen = gsap.fromTo(q("[data-sheen]"), { xPercent: -22 }, { xPercent: 22, duration: 9, ease: "sine.inOut", repeat: -1, yoyo: true, paused: true });
+      ScrollTrigger.create({ trigger: root.current, start: "top bottom", end: "bottom top", onToggle: (self) => (self.isActive ? sheen.play() : sheen.pause()) });
 
       const tl = gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top 62%", toggleActions: "play none none reverse" } });
       tl.fromTo(
