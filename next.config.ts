@@ -9,8 +9,9 @@ const nextConfig: NextConfig = {
   // `page.dev.tsx` files are section labs: routable in `next dev`, never exported.
   pageExtensions: isDev ? ["dev.tsx", "tsx", "ts"] : ["tsx", "ts"],
   reactStrictMode: true,
-  // Let phones/laptops on the office LAN open `next dev` (e.g. http://192.168.0.180:3100).
-  allowedDevOrigins: ["192.168.*.*", "10.*.*.*", "*.local"],
+  // Hosts other than localhost that may open `next dev` (the dev machine's LAN IP, e.g. from a phone).
+  // Dev-only; override with DEV_ORIGINS="host1,host2".
+  allowedDevOrigins: (process.env.DEV_ORIGINS ?? "192.168.0.180").split(",").filter(Boolean),
   turbopack: {
     rules: {
       "*.css": {
