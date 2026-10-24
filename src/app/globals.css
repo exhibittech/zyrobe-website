@@ -114,3 +114,42 @@ html.lenis, html.lenis body { height: auto; }
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Privacy policy / terms reading column */
+@layer components {
+  .legal { font-size: 1.02rem; line-height: 1.75; color: var(--color-ink-soft); }
+  .legal > p:first-child { font-size: 1.18rem; line-height: 1.65; color: var(--color-ink); }
+  .legal h2 {
+    scroll-margin-top: 7rem;
+    margin: 3.2rem 0 0.9rem;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.45rem, 1.2rem + 0.8vw, 1.9rem);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--color-ink);
+  }
+  .legal section:first-of-type h2 { margin-top: 2.6rem; }
+  .legal p { margin: 0.8rem 0; }
+  .legal ul { margin: 0.9rem 0; padding-left: 0; list-style: none; }
+  .legal li { position: relative; margin: 0.55rem 0; padding-left: 1.4rem; }
+  .legal li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.72em;
+    width: 0.32rem;
+    height: 0.32rem;
+    border-radius: 999px;
+    background: var(--color-olive);
+  }
+  .legal strong { color: var(--color-ink); font-weight: 700; }
+  .legal a { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-taupe); text-underline-offset: 3px; }
+  .legal a:hover { text-decoration-color: var(--color-ink); }
+  .legal :target { animation: legal-flash 2.4s var(--ease-silk); }
+  .legal .legal-note { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-line); font-size: 0.9rem; color: var(--color-muted); }
+}
+@keyframes legal-flash {
+  0%, 30% { background: color-mix(in oklab, var(--color-gold) 22%, transparent); }
+  100% { background: transparent; }
+}

@@ -5,7 +5,8 @@ const cols = [
   { title: "Legal", links: [["Privacy Policy", "/privacy"], ["Terms of Service", "/terms"], ["Delete your account", "/privacy#delete-account"]] },
 ] as const;
 
-export default function Footer() {
+/** `onHome={false}` on other pages, so the product links point back to the home page. */
+export default function Footer({ onHome = true }: { onHome?: boolean }) {
   return (
     <footer className="relative border-t border-line bg-cream text-ink">
       <div className="wrap grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1.2fr] md:py-20">
@@ -20,7 +21,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {c.links.map(([label, href]) => (
                 <li key={href}>
-                  <a href={href} className="text-ink-soft transition-colors hover:text-ink">{label}</a>
+                  <a href={!onHome && href.startsWith("#") ? `/${href}` : href} className="text-ink-soft transition-colors hover:text-ink">{label}</a>
                 </li>
               ))}
             </ul>

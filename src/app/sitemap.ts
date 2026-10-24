@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-// /privacy and /terms are served by the backend on the same domain (Caddy routes them).
+// /privacy and /terms are pages of this site (src/app/privacy, src/app/terms).
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [

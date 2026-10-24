@@ -29,7 +29,7 @@ api.zyrobe.com {
 
 # Public website. The marketing site is a static Next.js export from exhibittech/zyrobe-website,
 # deployed to /var/www/zyrobe-site/releases/<id> with `current` -> the live release (its deploy/deploy.sh).
-# The legal pages stay in the backend: Google Play links to https://zyrobe.com/privacy.
+# It also serves /privacy and /terms (Google Play links to https://zyrobe.com/privacy and #delete-account).
 zyrobe.com {
 	tls /etc/caddy/certs/origin.pem /etc/caddy/certs/origin.key
 	encode zstd gzip
@@ -40,11 +40,6 @@ zyrobe.com {
 		X-Frame-Options SAMEORIGIN
 		Permissions-Policy "camera=(), microphone=(), geolocation=()"
 		-Server
-	}
-
-	@legal path /privacy /terms
-	handle @legal {
-		reverse_proxy 127.0.0.1:8000
 	}
 
 	handle {
