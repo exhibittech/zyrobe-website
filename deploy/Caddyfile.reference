@@ -42,6 +42,10 @@ zyrobe.com {
 		-Server
 	}
 
+	# /privacy/ -> /privacy (pages are exported as <name>.html)
+	@trailing path_regexp trailing ^(.+)/$
+	redir @trailing {re.trailing.1} 308
+
 	handle {
 		root * /var/www/zyrobe-site/current
 		@hashed path /_next/static/*
