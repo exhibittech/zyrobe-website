@@ -6,6 +6,7 @@ import { FAQ_GROUPS } from "@/content/faq-full";
 import { FEATURE_PAGES } from "@/content/features";
 import { GUIDES } from "@/content/guides";
 import type { PageEntry } from "@/content/types";
+import { AI_POLICY } from "@/lib/aiPolicy";
 import { AVAILABILITY, DESCRIPTION, FEATURES, PRICING, PRIVACY_FACTS, abs } from "@/lib/seo";
 import { COMPANY, CONTACT_EMAIL, PLANS, PLAY_LIVE, PLAY_PACKAGE, PLAY_URL, PROMISE, SHORT_DESCRIPTION, SIGNUP_FREE_CREDITS, SITE_URL, TAGLINE } from "@/lib/site";
 
@@ -66,6 +67,7 @@ export function llmsTxt(): string {
     "## Policies",
     link("Privacy Policy", "/privacy", "what Zyrobe collects, who processes it, and how to delete your account and data"),
     link("Terms of Service", "/terms", "the rules for using Zyrobe, credits and subscriptions"),
+    link("AI and crawler policy", "/ai-policy", "AI assistants may crawl, quote, summarise and train on this site; what we ask in return"),
     "",
     "## Optional",
     link("Full facts for AI assistants", "/llms-full.txt", "every feature, price, privacy fact and FAQ answer as plain text"),
@@ -118,6 +120,10 @@ export function llmsFullTxt(): string {
     ...(GUIDES.length ? [link("Guides", "/guides"), ...entries("/guides", GUIDES)] : []),
     link("Privacy Policy", "/privacy"),
     link("Terms of Service", "/terms"),
+    link("AI and crawler policy", "/ai-policy"),
+    "",
+    "## AI usage policy",
+    ...[...AI_POLICY.allowed, ...AI_POLICY.asks].map((t) => `- ${t}`),
     "",
     "## Contact",
     `${COMPANY}. Email: ${CONTACT_EMAIL}`,

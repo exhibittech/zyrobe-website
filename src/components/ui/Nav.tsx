@@ -16,7 +16,7 @@ export default function Nav({ onHome = true }: { onHome?: boolean }) {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 md:pt-4">
+    <header data-nosnippet className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 md:pt-4">
       <nav
         aria-label="Main"
         className={`flex w-full max-w-5xl items-center justify-between rounded-full py-2 pl-5 pr-2 transition-all duration-700 ease-silk ${

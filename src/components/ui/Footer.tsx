@@ -3,13 +3,13 @@ import { COMPANY, CONTACT_EMAIL, TAGLINE } from "@/lib/site";
 const cols = [
   { title: "Product", links: [["How it works", "#features"], ["Pricing", "#pricing"], ["Download", "#download"]] },
   { title: "Explore", links: [["All features", "/features"], ["Guides", "/guides"], ["About Zyrobe", "/about"], ["FAQ", "/faq"]] },
-  { title: "Legal", links: [["Privacy Policy", "/privacy"], ["Terms of Service", "/terms"], ["Delete account & data", "/privacy#delete-account"]] },
+  { title: "Legal", links: [["Privacy Policy", "/privacy"], ["Terms of Service", "/terms"], ["Delete account & data", "/privacy#delete-account"], ["AI & crawler policy", "/ai-policy"]] },
 ] as const;
 
 /** `onHome={false}` on other pages, so the product links point back to the home page. */
 export default function Footer({ onHome = true }: { onHome?: boolean }) {
   return (
-    <footer className="relative border-t border-line bg-cream text-ink">
+    <footer data-nosnippet className="relative border-t border-line bg-cream text-ink">
       <div className="wrap grid grid-cols-2 gap-x-8 gap-y-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr] md:py-20">
         <div className="col-span-2 md:col-span-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}

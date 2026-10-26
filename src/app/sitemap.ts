@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { FEATURE_PAGES } from "@/content/features";
 import { GUIDES } from "@/content/guides";
 import { PRIVACY_UPDATED, SCREENSHOT_URLS, SITE_UPDATED, TERMS_UPDATED } from "@/lib/seo";
+import { AI_POLICY_UPDATED } from "@/lib/aiPolicy";
 import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -38,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const legal: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/privacy`, lastModified: PRIVACY_UPDATED, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/terms`, lastModified: TERMS_UPDATED, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${SITE_URL}/ai-policy`, lastModified: AI_POLICY_UPDATED, changeFrequency: "yearly", priority: 0.2 },
   ];
   return [home, ...hubs, ...features, ...guides, ...legal];
 }

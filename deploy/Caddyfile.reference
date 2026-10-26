@@ -35,12 +35,23 @@ zyrobe.com {
 	encode zstd gzip
 
 	header {
+		Strict-Transport-Security "max-age=31536000"
 		X-Content-Type-Options nosniff
 		Referrer-Policy strict-origin-when-cross-origin
 		X-Frame-Options SAMEORIGIN
 		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		# AI preferences (IETF aipref draft; same values as robots.txt and src/lib/aiPolicy.ts)
+		Content-Usage "search=y, ai-use=y, train-ai=y"
 		-Server
 	}
+
+	# Index and snippet controls, as headers for crawlers that skip the robots meta tag. Plain-text and data
+	# files (llms.txt, app data .txt files, version.json, the manifest) stay out of search results but can
+	# still be read; everything else may be indexed with full-length snippets and large image previews.
+	@noindex path *.txt *.json *.webmanifest
+	header @noindex X-Robots-Tag "noindex"
+	@indexable not path *.txt *.json *.webmanifest
+	header @indexable X-Robots-Tag "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 
 	# /privacy/ -> /privacy (pages are exported as <name>.html). Only plain path segments match and the
 	# target is an absolute URL on our own host, so "//evil.com/" can never become an off-site redirect.
