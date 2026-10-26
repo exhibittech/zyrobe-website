@@ -7,6 +7,8 @@ export const PLAY_URL = `https://play.google.com/store/apps/details?id=${PLAY_PA
 export const PLAY_LIVE = process.env.NEXT_PUBLIC_PLAY_LIVE === "1";
 
 export const SITE_URL = "https://zyrobe.com";
+// Google Analytics 4 property "Zyrobe website" (account Zyrobe, Exhibit Technologies organization).
+export const GA_ID = "G-PLJFE5QS5Q";
 export const CONTACT_EMAIL = "webteam@exhibit.co.in";
 export const COMPANY = "Exhibit Technologies Private Limited";
 

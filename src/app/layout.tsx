@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import JsonLd from "@/components/closing/JsonLd";
-import { COMPANY, SHORT_DESCRIPTION, SITE_URL } from "@/lib/site";
+import { COMPANY, GA_ID, SHORT_DESCRIPTION, SITE_URL } from "@/lib/site";
 import { DESCRIPTION, KEYWORDS, TITLE, pageAlternates, siteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
@@ -75,6 +76,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <JsonLd data={siteJsonLd()} />
         <SmoothScroll>{children}</SmoothScroll>
+        {/* Google Analytics, production builds only (page views on client navigation come from enhanced measurement). */}
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","${GA_ID}");`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

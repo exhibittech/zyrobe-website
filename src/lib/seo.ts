@@ -112,6 +112,7 @@ export const PRIVACY_FACTS = [
   "Your photos are only used to provide the features you ask for. They are never shown to other users, never sold and never used for advertising.",
   "Photos are not used to train AI models.",
   "The app has no advertising, no advertising IDs and no third-party analytics or tracking SDKs.",
+  "The zyrobe.com website (not the app) uses Google Analytics, with cookies, to count visits and see how pages are used.",
   "Account data and photos are stored on Google Cloud in the Mumbai region, India. Data is encrypted in transit (HTTPS) and at rest.",
   "AI features are processed by Google (Gemini API) for clothing analysis and outfit suggestions, and RunPod for product photos and try-on images.",
   "Weather uses your approximate city from your IP address; the app does not use GPS or ask for the location permission.",

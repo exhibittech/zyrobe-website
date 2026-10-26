@@ -26,8 +26,9 @@ const sections: LegalSection[] = [
           <li><strong>Approximate location:</strong> {"to show local weather, the App looks up your approximate city from your IP address (it does not use GPS and does not ask for the location permission). The city and temperature are used to tailor outfit suggestions."}</li>
           <li><strong>Purchase records:</strong> {"the credits and subscription you buy through Google Play (product, time and purchase token). Google handles your payment; we never see your card or UPI details."}</li>
           <li><strong>Basic technical data:</strong> {"your IP address, device and app version in our server logs, kept to keep the service secure and working."}</li>
+          <li><strong>Website visits:</strong> {"our website zyrobe.com uses Google Analytics to understand how people use it: the pages you view, how long you stay, your device and browser, your approximate location from your IP address, and how you found the site. Google Analytics sets cookies in your browser. You can block them in your browser settings or with Google\u2019s opt-out add-on (tools.google.com/dlpage/gaoptout)."}</li>
         </ul>
-        <p>{"The App does not contain advertising, advertising IDs, or third-party analytics or tracking SDKs."}</p>
+        <p>{"The App does not contain advertising, advertising IDs, or third-party analytics or tracking SDKs. Google Analytics is used only on our website."}</p>
       </>
     ),
   },
@@ -62,6 +63,7 @@ const sections: LegalSection[] = [
           <li><strong>Google Sign-In and Sign in with Apple</strong> verify your identity if you choose them.</li>
           <li><strong>Google Play</strong> processes your purchases.</li>
           <li><strong>Amazon SES</strong> sends account emails.</li>
+          <li><strong>Google Analytics</strong> measures visits to our website zyrobe.com.</li>
           <li><strong>ipwho.is and Open-Meteo</strong> provide the approximate city and the weather. They receive your IP address from your device.</li>
         </ul>
         <p>{"We may also disclose information if required by law or to protect the rights and safety of our users."}</p>
