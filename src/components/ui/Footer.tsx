@@ -3,7 +3,7 @@ import { COMPANY, CONTACT_EMAIL, TAGLINE } from "@/lib/site";
 const cols = [
   { title: "Product", links: [["How it works", "#features"], ["Pricing", "#pricing"], ["Download", "#download"]] },
   { title: "Explore", links: [["All features", "/features"], ["Guides", "/guides"], ["About Zyrobe", "/about"], ["FAQ", "/faq"]] },
-  { title: "Legal", links: [["Privacy Policy", "/privacy"], ["Terms of Service", "/terms"]] },
+  { title: "Legal", links: [["Privacy Policy", "/privacy"], ["Terms of Service", "/terms"], ["Delete account & data", "/privacy#delete-account"]] },
 ] as const;
 
 /** `onHome={false}` on other pages, so the product links point back to the home page. */
