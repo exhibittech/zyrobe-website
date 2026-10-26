@@ -17,7 +17,7 @@ if [ "$live_key" != "$KEY" ]; then
 fi
 
 if [ $# -gt 0 ]; then
-  urls=$(printf 'https://%s%s\n' "$HOST" "$@")
+  urls=$(for path in "$@"; do printf 'https://%s%s\n' "$HOST" "$path"; done)
 else
   urls=$(curl -fsS "https://$HOST/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed -e 's/<loc>//' -e 's/<\/loc>//')
 fi
