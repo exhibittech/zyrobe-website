@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -41,6 +41,9 @@ const body: GuideBody = {
           <Tip>
             <p>Avoid cotton as your base layer. Cotton holds sweat and snowmelt and stays cold and damp against your skin, while wool and synthetics keep you warmer when they get wet.</p>
           </Tip>
+          <p>
+            If your winter clothes are packed away, the <GuideLink href="/features/clothes-storage-tracker">clothes storage tracker</GuideLink> shows which box, loft or suitcase holds them.
+          </p>
         </>
       ),
     },
@@ -48,20 +51,12 @@ const body: GuideBody = {
       id: "list",
       title: "What should I pack for a winter trip to Manali or Shimla?",
       body: (
-        <GuideTable
-          caption="For a five-day trip"
-          head={["Item", "How many", "Notes"]}
-          rows={[
-            ["Thermal sets (top and leggings)", "2 to 3", "Wear one, keep one dry"],
-            ["Warm tops or sweaters", "3", "Wool or fleece works best"],
-            ["Insulated jacket", "1", "Water-resistant, with a hood if possible"],
-            ["Warm trousers", "3", "Fleece-lined or wool-blend; jeans are fine in town on dry days but stay cold and wet in snow"],
-            ["Woollen socks", "4 to 5 pairs", "Plus one spare pair in your day bag"],
-            ["Gloves", "1 to 2 pairs", "Waterproof ones if you plan to play in the snow"],
-            ["Warm cap and scarf or neck warmer", "1 each", "Choose a cap that covers your ears"],
-            ["Warm sleepwear", "1 to 2 sets", "Room heating varies from hotel to hotel"],
-          ]}
-        />
+        <>
+          <GuideTable            caption="For a five-day trip"            head={["Item", "How many", "Notes"]}            rows={[              ["Thermal sets (top and leggings)", "2 to 3", "Wear one, keep one dry"],              ["Warm tops or sweaters", "3", "Wool or fleece works best"],              ["Insulated jacket", "1", "Water-resistant, with a hood if possible"],              ["Warm trousers", "3", "Fleece-lined or wool-blend; jeans are fine in town on dry days but stay cold and wet in snow"],              ["Woollen socks", "4 to 5 pairs", "Plus one spare pair in your day bag"],              ["Gloves", "1 to 2 pairs", "Waterproof ones if you plan to play in the snow"],              ["Warm cap and scarf or neck warmer", "1 each", "Choose a cap that covers your ears"],              ["Warm sleepwear", "1 to 2 sets", "Room heating varies from hotel to hotel"],            ]}          />
+          <p>
+            The <GuideLink href="/features/trip-packing-planner">trip packing planner</GuideLink> can turn this list into an outfit for each day of your trip. Heading somewhere warmer? See the <GuideLink href="/guides/goa-packing-list">Goa packing list</GuideLink> or the <GuideLink href="/guides/kerala-packing-list">Kerala packing list</GuideLink>.
+          </p>
+        </>
       ),
     },
     {

@@ -53,6 +53,8 @@ export type Feature = {
   shots: FeatureShot[];
   faqs: Faq[];
   related: FeatureSlug[];
+  /** Guides that put this feature to work (slugs in src/content/guides.ts), listed at the end of the page. */
+  guides: string[];
 };
 
 export const FEATURES_UPDATED = "2026-10-26";
@@ -61,11 +63,11 @@ export const FEATURES: Feature[] = [
   {
     slug: "digital-wardrobe",
     name: "Digital wardrobe",
-    title: "Digital wardrobe app: all your clothes in one place",
+    title: "Digital wardrobe app: add your clothes from a photo",
     description:
-      "Take a photo of a piece of clothing and Zyrobe removes the background, notes the type and colour, and adds it to your digital wardrobe. Search and filter everything you own.",
+      "Zyrobe is a digital wardrobe app for Android. Snap a photo of a piece of clothing and it removes the background, notes the type and colour and files it for you.",
     lead:
-      "Zyrobe turns photos of your clothes into a tidy digital wardrobe on your phone. Take a photo, and the app removes the background, notes the type and colour, and files the item for you.",
+      "Zyrobe is a digital wardrobe app for Android. It turns photos of your clothes into a tidy wardrobe on your phone: take a photo, and the app removes the background, notes the type and colour, and files the item for you.",
     sections: [
       {
         id: "what-is-it",
@@ -144,21 +146,22 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["clothes-storage-tracker", "outfit-maker", "ai-stylist"],
+    guides: ["organise-your-wardrobe", "office-wear-indian-summer", "diwali-festive-outfit-planning"],
   },
   {
     slug: "clothes-storage-tracker",
     name: "Storage tracker",
-    title: "Clothes storage tracker: know where every item is kept",
+    title: "Closet organizer app: know where every item is kept",
     description:
-      "Note where each piece of clothing is kept, like a cupboard, a drawer or a suitcase. Zyrobe's storage tracker shows what is in each place, so you find things fast.",
+      "Zyrobe's storage tracker is a closet organizer for your phone: note which cupboard, drawer or suitcase holds each item, and find any piece of clothing fast.",
     lead:
-      "Zyrobe remembers where each piece of clothing is kept, like a cupboard, a drawer or a suitcase. Open a place to see what is in it, or open an item to see where it is.",
+      "Zyrobe works as a closet organizer app by remembering where each piece of clothing is kept, like a cupboard, a drawer or a suitcase. Open a place to see what is in it, or open an item to see where it is.",
     sections: [
       {
         id: "what-is-it",
         heading: "What is the storage tracker?",
         paras: [
-          "The storage tracker is the Storage tab in your Zyrobe wardrobe. It lists the places where you keep clothes. Each place has a name and a photo, and shows the items stored there.",
+          "The storage tracker is the Storage tab in your Zyrobe wardrobe, a closet organizer for your phone. It lists the places where you keep clothes. Each place has a name and a photo, and shows the items stored there.",
           "Each item's details also show where it is kept, so you know where to look before you open a single drawer.",
         ],
         list: ["Bedroom wardrobe", "Shirt drawer", "Travel bag", "Walk-in closet"],
@@ -199,15 +202,16 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["digital-wardrobe", "trip-packing-planner", "outfit-maker"],
+    guides: ["organise-your-wardrobe", "manali-shimla-winter-packing-list", "monsoon-wardrobe-guide"],
   },
   {
     slug: "outfit-maker",
     name: "Outfit maker",
-    title: "Outfit maker: build outfits from the clothes you own",
+    title: "Outfit maker app: build outfits from clothes you own",
     description:
-      "Put outfits together on a canvas with the clothes in your Zyrobe wardrobe. Name them, save them, schedule them on your calendar and see how you look in them.",
+      "Zyrobe's outfit maker app lets you build outfits on a canvas from the clothes you own, save each look with a name and plan it for any day on your calendar.",
     lead:
-      "Zyrobe's outfit maker is a canvas where you put outfits together from the clothes you already own. Save each look with a name, and wear it on any day you choose.",
+      "Zyrobe's outfit maker app is a canvas where you put outfits together from the clothes you already own. Save each look with a name, and wear it on any day you choose.",
     sections: [
       {
         id: "what-is-it",
@@ -267,15 +271,16 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["ai-virtual-try-on", "outfit-planner", "ai-stylist"],
+    guides: ["indian-wedding-guest-outfits", "diwali-festive-outfit-planning", "paris-packing-list"],
   },
   {
     slug: "ai-virtual-try-on",
     name: "AI virtual try-on",
-    title: "AI virtual try-on: see clothes on you before you wear them",
+    title: "AI virtual try-on app: try clothes on from your photo",
     description:
-      "Add a full-body photo of yourself, pick a top, a bottom or both from your wardrobe, and Zyrobe's AI shows you wearing them. Save the look or attach it to an outfit.",
+      "Zyrobe's AI virtual try-on app shows you in a top, a bottom or both from your own wardrobe, so you can check a look before you dress. Results are AI previews.",
     lead:
-      "Add a photo of yourself, pick a top, a bottom or both from your wardrobe, and Zyrobe's AI shows you wearing them. It is a quick way to check a look before you get dressed.",
+      "Zyrobe's AI virtual try-on app shows you wearing your own clothes before you get dressed. Add a photo of yourself, pick a top, a bottom or both from your wardrobe, and the AI shows you in them. It is an AI preview, so it may not match exactly how clothes look or fit in real life.",
     sections: [
       {
         id: "how-it-works",
@@ -352,15 +357,16 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["outfit-maker", "ai-stylist", "digital-wardrobe"],
+    guides: ["indian-wedding-guest-outfits", "diwali-festive-outfit-planning"],
   },
   {
     slug: "ai-stylist",
     name: "AI stylist",
-    title: "AI stylist: what to wear, from your own wardrobe",
+    title: "AI stylist app: outfit ideas from your own clothes",
     description:
-      "Ask Zyrobe's AI stylist what to wear for work, a party, a date or a trip. It builds a complete outfit from the clothes you own, with your style and the weather in mind.",
+      "Ask Zyrobe's AI stylist app what to wear for work, a party, a date or a trip. It builds an outfit from your own clothes, with your style and weather in mind.",
     lead:
-      "Ask Zyrobe's AI stylist what to wear for work, a party, a date or a trip. It picks a complete outfit from the clothes you already own, explains why it works, and keeps your style and the weather in mind.",
+      "Zyrobe is an AI stylist app that tells you what to wear from the clothes you already own. Ask for work, a party, a date or a trip, and it picks a complete outfit, explains why it works, and keeps your style and the weather in mind.",
     sections: [
       {
         id: "what-is-it",
@@ -426,15 +432,16 @@ export const FEATURES: Feature[] = [
       { q: "Can I save the looks it suggests?", a: "Yes. Save a look to your lookbook, or tap Use This Look." },
     ],
     related: ["outfit-planner", "trip-packing-planner", "ai-virtual-try-on"],
+    guides: ["office-wear-indian-summer", "monsoon-wardrobe-guide", "indian-wedding-guest-outfits"],
   },
   {
     slug: "outfit-planner",
     name: "Outfit planner",
-    title: "Outfit planner: plan what to wear this week",
+    title: "Outfit planner app: plan what to wear this week",
     description:
-      "Tell Zyrobe what your week looks like and its AI plans an outfit for each day from your own clothes. Confirm the plan and it goes on your Style Calendar.",
+      "Zyrobe's outfit planner app plans what you wear this week: tell it about your week and its AI plans an outfit for each day from your own clothes.",
     lead:
-      "Tell Zyrobe what your week looks like, and its AI plans an outfit for each day from the clothes you own. Confirm the plan and the outfits go on your Style Calendar.",
+      "Zyrobe is an outfit planner app that plans what you wear for the whole week. Tell it what your week looks like, and its AI plans an outfit for each day from the clothes you own. Confirm the plan and the outfits go on your Style Calendar.",
     sections: [
       {
         id: "how-it-works",
@@ -490,15 +497,16 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["ai-stylist", "outfit-maker", "trip-packing-planner"],
+    guides: ["office-wear-indian-summer", "diwali-festive-outfit-planning", "monsoon-wardrobe-guide"],
   },
   {
     slug: "trip-packing-planner",
     name: "Trip packing planner",
-    title: "Trip packing planner: outfits for every day of your trip",
+    title: "Packing list app: plan outfits for every day of a trip",
     description:
-      "Plan a trip in Zyrobe and pack from your own wardrobe. The AI suggests day-by-day outfits for your destination's weather and plans, and you can share the packing list as a PDF.",
+      "Zyrobe's packing list app plans a trip from your own wardrobe: day-by-day outfits for the destination's weather, a packing checklist and a PDF to share.",
     lead:
-      "Plan a trip in Zyrobe's Briefcase and pack from your own wardrobe. The AI suggests an outfit for each day, based on the weather where you are going and what you plan to do, and you can share the packing list as a PDF.",
+      "Zyrobe is a packing list app that plans an outfit for each day of your trip from your own wardrobe. Plan a trip in Briefcase, and the AI suggests outfits based on the weather where you are going and what you plan to do. You can share the packing list as a PDF.",
     sections: [
       {
         id: "how-it-works",
@@ -574,6 +582,7 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["outfit-planner", "ai-stylist", "clothes-storage-tracker"],
+    guides: ["goa-packing-list", "manali-shimla-winter-packing-list", "kerala-packing-list", "dubai-packing-list", "paris-packing-list"],
   },
 ];
 

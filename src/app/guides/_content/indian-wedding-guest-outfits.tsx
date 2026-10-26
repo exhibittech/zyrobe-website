@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -141,6 +141,9 @@ const body: GuideBody = {
               "Your gift or envelope, ready the night before",
             ]}
           />
+          <p>
+            Build one look per function in the <GuideLink href="/features/outfit-maker">outfit maker</GuideLink>, then put each on your calendar with the <GuideLink href="/features/outfit-planner">outfit planner</GuideLink>, so everything is decided before you pack. Festive wear overlaps with Diwali, so see our <GuideLink href="/guides/diwali-festive-outfit-planning">Diwali outfit ideas</GuideLink> too.
+          </p>
         </>
       ),
     },

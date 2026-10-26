@@ -14,12 +14,19 @@ const PLACES = [
 ];
 
 const ITEMS = [
-  { src: "/media/feat/st_item_0.webp", rot: -9, cls: "left-[-34%] top-[70%] max-md:left-[-22%] max-md:top-[68%]" },
-  { src: "/media/feat/st_item_1.webp", rot: -4, cls: "left-[-4%] top-[73%] max-md:left-[34%] max-md:top-[72%]" },
-  { src: "/media/feat/st_item_2.webp", rot: 0, cls: "left-[26%] top-[75%] max-md:left-[90%] max-md:top-[68%]" },
-  { src: "/media/feat/st_item_3.webp", rot: 4, cls: "left-[56%] top-[73%] max-md:hidden" },
-  { src: "/media/feat/st_item_4.webp", rot: 9, cls: "left-[86%] top-[70%] max-md:hidden" },
+  { src: "/media/feat/st_item_0.webp", alt: "Maroon patterned velvet shirt, ticked", rot: -9, cls: "left-[-34%] top-[70%] max-md:left-[-22%] max-md:top-[68%]" },
+  { src: "/media/feat/st_item_1.webp", alt: "White linen shirt, ticked", rot: -4, cls: "left-[-4%] top-[73%] max-md:left-[34%] max-md:top-[72%]" },
+  { src: "/media/feat/st_item_2.webp", alt: "Mid-blue jeans, ticked", rot: 0, cls: "left-[26%] top-[75%] max-md:left-[90%] max-md:top-[68%]" },
+  { src: "/media/feat/st_item_3.webp", alt: "Faded blue jeans, ticked", rot: 4, cls: "left-[56%] top-[73%] max-md:hidden" },
+  { src: "/media/feat/st_item_4.webp", alt: "Dark blue jeans, ticked", rot: 9, cls: "left-[86%] top-[70%] max-md:hidden" },
 ];
+
+// The Storage Details screen as items get ticked (cross-fades over the Storage tab).
+const DETAIL_SCREENS = [
+  ["st_detail_0", "Storage Details for the Bedroom Wardrobe, with no items ticked yet"],
+  ["st_detail_2", "Storage Details for the Bedroom Wardrobe, with a velvet shirt and a linen shirt ticked"],
+  ["st_detail_4", "Storage Details for the Bedroom Wardrobe, with four items ticked"],
+] as const;
 
 function Stage() {
   const ref = useRef<HTMLDivElement>(null);
@@ -56,13 +63,14 @@ function Stage() {
     >
       <div data-phone className="absolute inset-0">
         <Phone src="/media/feat/st_grid.webp" alt="Zyrobe Storage tab: Bedroom Wardrobe, Travel Bag, Shirt Drawer and Walk-in Closet">
-          {["st_detail_0", "st_detail_2", "st_detail_4"].map((s) => (
+          {DETAIL_SCREENS.map(([s, alt]) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               key={s}
               data-screen
               src={`/media/feat/${s}.webp`}
-              alt=""
+              alt={alt}
+              aria-hidden="true"
               loading="lazy"
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover opacity-0"
@@ -94,10 +102,10 @@ function Stage() {
       ))}
 
       {ITEMS.map((it) => (
-        <Pop key={it.src} tag="item" src={it.src} w={0.3} rot={it.rot} className={`z-30 ${it.cls}`} />
+        <Pop key={it.src} tag="item" src={it.src} alt={it.alt} w={0.3} rot={it.rot} className={`z-30 ${it.cls}`} />
       ))}
 
-      <Pop tag="toast" src="/media/feat/st_toast.webp" w={1.1} className="z-40 left-[-5%] top-[83%]" />
+      <Pop tag="toast" src="/media/feat/st_toast.webp" alt="Success: items saved to storage successfully" w={1.1} className="z-40 left-[-5%] top-[83%]" />
     </div>
   );
 }

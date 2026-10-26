@@ -31,19 +31,19 @@ function Stage() {
       </div>
 
       {/* Analysing in the upload queue */}
-      <Pop tag="queue" src="/media/comps/queue_card.webp" w={1.06} r={0.05} className="z-20 left-[-44%] top-[9%] max-md:left-[-26%] max-md:top-[5%] max-md:w-[calc(var(--phone-w)*0.98)]!" />
+      <Pop tag="queue" src="/media/comps/queue_card.webp" alt="Upload queue card: a jacket being analysed by AI, first in the queue" w={1.06} r={0.05} className="z-20 left-[-44%] top-[9%] max-md:left-[-26%] max-md:top-[5%] max-md:w-[calc(var(--phone-w)*0.98)]!" />
 
       {/* What the AI noted */}
-      <Pop tag="tag" src="/media/comps/yl_piece_1.webp" w={0.42} r={0.095} rot={5} className="z-20 left-[74%] top-[22%] max-md:left-[70%] max-md:top-[24%]" />
-      <Pop tag="tag" src="/media/comps/yl_piece_2.webp" w={0.42} r={0.095} rot={-4} className="z-20 left-[104%] top-[37%] max-md:left-[76%] max-md:top-[46%]" />
-      <Pop tag="tag" src="/media/comps/yl_piece_3.webp" w={0.42} r={0.095} rot={3} className="z-20 left-[78%] top-[55%] max-md:hidden" />
+      <Pop tag="tag" src="/media/comps/yl_piece_1.webp" alt="Linen shirt tagged as a top, formal style" w={0.42} r={0.095} rot={5} className="z-20 left-[74%] top-[22%] max-md:left-[70%] max-md:top-[24%]" />
+      <Pop tag="tag" src="/media/comps/yl_piece_2.webp" alt="Beige trousers tagged as a bottom, formal style" w={0.42} r={0.095} rot={-4} className="z-20 left-[104%] top-[37%] max-md:left-[76%] max-md:top-[46%]" />
+      <Pop tag="tag" src="/media/comps/yl_piece_3.webp" alt="Casual sneakers tagged as footwear, vintage style" w={0.42} r={0.095} rot={3} className="z-20 left-[78%] top-[55%] max-md:hidden" />
 
       {/* Into the wardrobe */}
-      <Pop tag="card" src="/media/comps/wcard_jacket.webp" w={0.38} r={0.073} rot={-5} className="z-20 left-[-40%] top-[34%] max-md:left-[-24%] max-md:top-[48%]" />
-      <Pop tag="card" src="/media/comps/wcard_tshirt.webp" w={0.38} r={0.073} rot={4} className="z-10 left-[-62%] top-[50%] max-md:hidden" />
-      <Pop tag="card" src="/media/comps/wcard_jeans.webp" w={0.38} r={0.073} rot={-2} className="z-20 left-[-34%] top-[66%] max-md:hidden" />
+      <Pop tag="card" src="/media/comps/wcard_jacket.webp" alt="Wardrobe card for a cream bomber jacket with navy trim" w={0.38} r={0.073} rot={-5} className="z-20 left-[-40%] top-[34%] max-md:left-[-24%] max-md:top-[48%]" />
+      <Pop tag="card" src="/media/comps/wcard_tshirt.webp" alt="Wardrobe card for a T-shirt with a Japanese-style graphic print" w={0.38} r={0.073} rot={4} className="z-10 left-[-62%] top-[50%] max-md:hidden" />
+      <Pop tag="card" src="/media/comps/wcard_jeans.webp" alt="Wardrobe card for black jeans" w={0.38} r={0.073} rot={-2} className="z-20 left-[-34%] top-[66%] max-md:hidden" />
 
-      <Pop tag="ai" src="/media/comps/chip_ai.webp" w={0.6} r={0.123} rot={3} className="z-30 left-[64%] top-[1%] max-md:left-[52%] max-md:top-[-1%] max-md:w-[calc(var(--phone-w)*0.5)]!" />
+      <Pop tag="ai" src="/media/comps/chip_ai.webp" alt="AI Curated badge" w={0.6} r={0.123} rot={3} className="z-30 left-[64%] top-[1%] max-md:left-[52%] max-md:top-[-1%] max-md:w-[calc(var(--phone-w)*0.5)]!" />
     </div>
   );
 }

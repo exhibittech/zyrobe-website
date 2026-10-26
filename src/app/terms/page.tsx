@@ -4,8 +4,8 @@ import { CONTACT_EMAIL } from "@/lib/site";
 
 // Legal text: keep word-for-word; change the date when the text changes.
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "The terms for using the Zyrobe app, including accounts, your content, credits and subscriptions.",
+  title: "Terms of Service: accounts, credits and subscriptions",
+  description: "The terms for using the Zyrobe app: your account, your content, acceptable use, how AI credits, subscriptions and payments work, and how to contact us.",
   alternates: { canonical: "/terms" },
 };
 

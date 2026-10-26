@@ -18,21 +18,25 @@ import {
   type Plan,
 } from "@/lib/site";
 
-export const TITLE = `Zyrobe — ${PROMISE}`;
+export const TITLE = "Zyrobe: wardrobe app for India with AI stylist and try-on";
 export const DESCRIPTION =
-  "Zyrobe keeps all your clothes in one app. Snap a photo and it sorts them, then try outfits on with AI, get looks from an AI stylist, plan your week and pack for trips.";
+  "Zyrobe is an Android wardrobe app for India. Add clothes from a photo, try outfits on with AI, get looks from an AI stylist, plan your week and pack for trips.";
+// Home-page cluster (the meta keywords tag is ignored by Google; it documents the strategy in docs/seo-keyword-strategy.md).
 export const KEYWORDS = [
   "Zyrobe",
   "wardrobe app",
-  "digital wardrobe app India",
+  "AI wardrobe app",
+  "wardrobe app India",
+  "digital wardrobe app",
   "closet organizer app",
   "AI stylist app",
   "virtual try-on app",
-  "outfit planner",
+  "outfit planner app",
+  "outfit maker app",
+  "packing list app",
   "what to wear today",
   "AI outfit ideas from my clothes",
-  "trip packing list app",
-  "wardrobe organiser Android",
+  "wardrobe app for Android",
 ];
 
 /** Last site-wide content change (sitemap lastmod for pages without their own date). */

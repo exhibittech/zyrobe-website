@@ -11,11 +11,11 @@ import { CREDIT_TABLE, FEATURES, FEATURES_UPDATED } from "@/content/features";
 import { abs, breadcrumbJsonLd } from "@/lib/seo";
 import { SIGNUP_FREE_CREDITS } from "@/lib/site";
 
-const TITLE = "Zyrobe features: from the first photo to a packed suitcase";
+const TITLE = "Wardrobe app features: from the first photo to a packed suitcase";
 const DESCRIPTION =
-  "What Zyrobe does: a digital wardrobe, a clothes storage tracker, an outfit maker, AI virtual try-on, an AI stylist, a weekly outfit planner and a trip packing planner.";
+  "Every Zyrobe feature: digital wardrobe, closet storage tracker, outfit maker, AI virtual try-on, AI stylist, weekly outfit planner and trip packing list.";
 
-export const metadata = contentMetadata({ path: "/features", title: "Features: digital wardrobe, AI stylist and virtual try-on", description: DESCRIPTION });
+export const metadata = contentMetadata({ path: "/features", title: "Wardrobe app features: AI stylist, try-on and planner", description: DESCRIPTION });
 
 const jsonLd = [
   {
@@ -45,7 +45,7 @@ export default function FeaturesPage() {
         crumbs={[{ name: "Features", path: "/features" }]}
         eyebrow="Features"
         title={TITLE}
-        lead="Zyrobe keeps all your clothes in one app and helps you decide what to wear. Here is everything it does, and how each part works."
+        lead="Zyrobe is a wardrobe app that keeps all your clothes in one place and helps you decide what to wear. Here is every feature, and how each part works."
         updated={FEATURES_UPDATED}
         actions={<PlayButton />}
       />

@@ -7,6 +7,7 @@ import JsonLd from "@/components/closing/JsonLd";
 import GuideCard from "./GuideCard";
 import { guideJsonLd } from "./schema";
 import { guideBySlug, type GuideEntry } from "@/content/guides";
+import { garmentAlt } from "@/lib/alt";
 import { SIGNUP_FREE_CREDITS } from "@/lib/site";
 
 export type GuideSection = { id: string; title: string; body: ReactNode };
@@ -40,7 +41,7 @@ export default function GuidePage({ guide, body }: { guide: GuideEntry; body: Gu
               <img
                 key={id}
                 src={`/media/garments/${id}.webp`}
-                alt=""
+                alt={garmentAlt(id)}
                 width={315}
                 height={399}
                 decoding="async"

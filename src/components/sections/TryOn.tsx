@@ -7,6 +7,7 @@ import Pop from "@/components/features-a/Pop";
 import DressForm from "@/components/features-a/DressForm";
 import { diveIn, popOut, tilt, useStageTimeline } from "@/components/features-a/stage";
 import { Chevron, Sparkle, StatusBar, u } from "@/components/features-a/ui";
+import { garmentAlt } from "@/lib/alt";
 
 const TOP = "/media/garments/c09.webp";
 const BOTTOM = "/media/garments/c22.webp";
@@ -43,9 +44,9 @@ function TryOnScreen() {
         <div className="absolute bottom-[2%] left-1/2 h-[93%] -translate-x-1/2" style={{ aspectRatio: "200 / 400" }}>
           <DressForm className="absolute inset-0 h-full w-full" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img data-fit src={BOTTOM} alt="" draggable={false} className="invisible absolute h-auto" style={{ left: "24.75%", top: "55%", width: "50.5%" }} />
+          <img data-fit src={BOTTOM} alt={garmentAlt(BOTTOM)} draggable={false} className="invisible absolute h-auto" style={{ left: "24.75%", top: "55%", width: "50.5%" }} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img data-fit src={TOP} alt="" draggable={false} className="invisible absolute h-auto drop-shadow-[0_4px_6px_rgb(46_28_18/.18)]" style={{ left: "4%", top: "9.75%", width: "92%" }} />
+          <img data-fit src={TOP} alt={garmentAlt(TOP)} draggable={false} className="invisible absolute h-auto drop-shadow-[0_4px_6px_rgb(46_28_18/.18)]" style={{ left: "4%", top: "9.75%", width: "92%" }} />
         </div>
         <div data-glow className="pointer-events-none absolute inset-0 opacity-0 bg-[radial-gradient(60%_45%_at_50%_40%,rgb(255_250_235/.55),transparent_70%)]" />
         <div
@@ -76,7 +77,7 @@ function TryOnScreen() {
         {[TOP, BOTTOM].map((src) => (
           <span key={src} className="flex items-center justify-center bg-white ring-2 ring-ink" style={{ width: u(15), height: u(15), borderRadius: u(3), padding: u(1.4) }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt="" className="h-full w-auto object-contain" draggable={false} />
+            <img src={src} alt={garmentAlt(src)} aria-hidden="true" className="h-full w-auto object-contain" draggable={false} />
           </span>
         ))}
         <span className="ml-auto text-right text-muted" style={{ fontSize: u(2.4), lineHeight: 1.3 }}>
@@ -161,13 +162,13 @@ function Stage() {
 
       {/* The clothes being tried */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img data-in data-rot={-8} src={TOP} alt="" aria-hidden="true" draggable={false} className="invisible absolute z-20 h-auto drop-shadow-[0_18px_22px_rgb(46_28_18/.3)] left-[-64%] top-[8%] max-md:left-[-34%] max-md:top-[6%]" style={{ width: u(52) }} />
+      <img data-in data-rot={-8} src={TOP} alt={garmentAlt(TOP)} aria-hidden="true" draggable={false} className="invisible absolute z-20 h-auto drop-shadow-[0_18px_22px_rgb(46_28_18/.3)] left-[-64%] top-[8%] max-md:left-[-34%] max-md:top-[6%]" style={{ width: u(52) }} />
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img data-in data-rot={7} src={BOTTOM} alt="" aria-hidden="true" draggable={false} className="invisible absolute z-20 h-auto drop-shadow-[0_18px_22px_rgb(46_28_18/.3)] left-[106%] top-[38%] max-md:left-[82%] max-md:top-[36%]" style={{ width: u(44) }} />
+      <img data-in data-rot={7} src={BOTTOM} alt={garmentAlt(BOTTOM)} aria-hidden="true" draggable={false} className="invisible absolute z-20 h-auto drop-shadow-[0_18px_22px_rgb(46_28_18/.3)] left-[106%] top-[38%] max-md:left-[82%] max-md:top-[36%]" style={{ width: u(44) }} />
 
-      <Pop tag="photo" src="/media/comps/pill_photo.webp" w={0.42} rot={-4} className="z-30 left-[-30%] top-[50%] max-md:left-[-20%] max-md:top-[48%]" />
-      <Pop tag="toast" src="/media/comps/toast_tryon.webp" w={1.06} r={0.033} className="z-40 left-[-3%] top-[2%]" />
-      <Pop tag="vto" src="/media/comps/card_vto.webp" w={1.0} r={0.041} rot={-2} className="z-30 left-[-46%] top-[80%] max-md:hidden" />
+      <Pop tag="photo" src="/media/comps/pill_photo.webp" alt="Your photo button" w={0.42} rot={-4} className="z-30 left-[-30%] top-[50%] max-md:left-[-20%] max-md:top-[48%]" />
+      <Pop tag="toast" src="/media/comps/toast_tryon.webp" alt="Try-On Ready! Your virtual look has been generated." w={1.06} r={0.033} className="z-40 left-[-3%] top-[2%]" />
+      <Pop tag="vto" src="/media/comps/card_vto.webp" alt="Virtual Try-On card: see outfits on yourself before wearing" w={1.0} r={0.041} rot={-2} className="z-30 left-[-46%] top-[80%] max-md:hidden" />
     </div>
   );
 }

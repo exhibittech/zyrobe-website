@@ -6,15 +6,16 @@ import GuideCard from "@/components/guides/GuideCard";
 import { categoryId } from "@/components/guides/GuidePage";
 import { guideImage, guidesIndexJsonLd } from "@/components/guides/schema";
 import { GUIDES, GUIDE_CATEGORIES, type GuideCategory } from "@/content/guides";
+import { pageAlternates } from "@/lib/seo";
 
-const TITLE = "Guides: what to wear and what to pack";
+const TITLE = "What to wear and what to pack: guides for India";
 const DESCRIPTION =
-  "Practical guides from Zyrobe: what to wear to an Indian wedding, festive and monsoon outfits, office wear for Indian summers, and packing lists for Goa, Manali, Kerala, Paris and Dubai.";
+  "Guides on what to wear and what to pack in India: Indian weddings, Diwali, monsoon and office wear, plus packing lists for Goa, Manali, Kerala and Dubai.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: "/guides" },
+  alternates: pageAlternates("/guides"),
   openGraph: {
     type: "website",
     url: "/guides",
@@ -49,8 +50,8 @@ export default function GuidesIndex() {
               What to wear, <em className="italic">what to pack.</em>
             </h1>
             <p className="mt-6 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft md:text-lg">
-              Practical answers for the questions everyone asks in front of the wardrobe: what to wear to a wedding, how to
-              dress for the rains, and what to take on a trip. Written for India, useful anywhere.
+              These guides answer what to wear and what to pack in India: what to wear to a wedding, how to dress for the
+              rains, and what to take on a trip. Written for India, useful anywhere.
             </p>
             <nav aria-label="Guide topics" className="glass mt-8 inline-flex max-w-full flex-wrap gap-1 rounded-[22px] p-1">
               {GUIDE_CATEGORIES.map((c) => (

@@ -1,5 +1,10 @@
 import type { ReactNode } from "react";
 
+/** In-text link to another page. A plain <a> (full page load, like the rest of the site); the dynamic href keeps Next's link rule quiet. */
+export function GuideLink({ href, children }: { href: string; children: ReactNode }) {
+  return <a href={href}>{children}</a>;
+}
+
 /** Tick-box list for packing lists and checklists (inside the `.legal` reading column). */
 export function Checklist({ items, title }: { items: ReactNode[]; title?: string }) {
   return (

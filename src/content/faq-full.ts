@@ -56,6 +56,8 @@ export const FAQ_GROUPS: { topic: string; items: Faq[] }[] = [
         q: "Which AI does Zyrobe use?",
         a: "Google's Gemini analyses clothing photos and writes outfit suggestions. Image models run on RunPod create product photos and try-on images.",
       },
+      home("Can Zyrobe tell me what to wear today?"),
+      home("Can Zyrobe help me pack for a trip?"),
       {
         q: "Does Zyrobe consider the weather?",
         a: "Yes. Outfit suggestions, weekly plans and packing lists take the weather into account. Zyrobe looks up your approximate city from your internet connection, and for trips it uses the weather at your destination.",

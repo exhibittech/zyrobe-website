@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -45,6 +45,9 @@ const body: GuideBody = {
               "A compact umbrella",
             ]}
           />
+          <p>
+            For more on layering in the cold, see the <GuideLink href="/guides/manali-shimla-winter-packing-list">Manali and Shimla winter packing list</GuideLink>.
+          </p>
         </>
       ),
     },
@@ -128,16 +131,12 @@ const body: GuideBody = {
       id: "from-india",
       title: "Any tips for travellers from India?",
       body: (
-        <Checklist
-          title="Before you fly"
-          items={[
-            "Check the forecast a week before you leave and again the night before",
-            "Pack a pashmina or stole: it works as a scarf, a layer and a cover-up",
-            "Carry a cross-body bag that zips; crowded sights and the metro attract pickpockets",
-            "Keep a warm layer in your hand luggage for the flight and the arrival",
-            "Plan your outfits by day, so you pack only what you will wear",
-          ]}
-        />
+        <>
+          <Checklist            title="Before you fly"            items={[              "Check the forecast a week before you leave and again the night before",              "Pack a pashmina or stole: it works as a scarf, a layer and a cover-up",              "Carry a cross-body bag that zips; crowded sights and the metro attract pickpockets",              "Keep a warm layer in your hand luggage for the flight and the arrival",              "Plan your outfits by day, so you pack only what you will wear",            ]}          />
+          <p>
+            The <GuideLink href="/features/trip-packing-planner">trip packing planner</GuideLink> checks the forecast for you and plans an outfit for each day. Stopping in the Gulf on the way? See the <GuideLink href="/guides/dubai-packing-list">Dubai packing list</GuideLink>.
+          </p>
+        </>
       ),
     },
   ],

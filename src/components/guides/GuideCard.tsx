@@ -1,4 +1,5 @@
 import type { GuideEntry } from "@/content/guides";
+import { garmentAlt } from "@/lib/alt";
 
 /** Guide link card: garment cut-outs on satin, then the title and summary. */
 export default function GuideCard({ guide, headingLevel = 3 }: { guide: GuideEntry; headingLevel?: 2 | 3 }) {
@@ -14,7 +15,7 @@ export default function GuideCard({ guide, headingLevel = 3 }: { guide: GuideEnt
           <img
             key={id}
             src={`/media/garments/${id}.webp`}
-            alt=""
+            alt={garmentAlt(id)}
             width={315}
             height={399}
             loading="lazy"

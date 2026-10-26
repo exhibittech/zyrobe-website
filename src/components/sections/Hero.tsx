@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import PlayButton from "@/components/ui/PlayButton";
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap";
+import { garmentAlt, SATIN_ALT } from "@/lib/alt";
 import { PROMISE, SHORT_DESCRIPTION } from "@/lib/site";
 
 const HeroScene = dynamic(() => import("@/components/three/HeroScene"), { ssr: false });
@@ -140,7 +141,8 @@ export default function Hero() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/media/brand/satin.webp"
-          alt=""
+          alt={SATIN_ALT.cream}
+          aria-hidden="true"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
@@ -169,7 +171,7 @@ export default function Hero() {
                 key={c.id}
                 data-piece
                 src={`/media/garments/${c.id}.webp`}
-                alt=""
+                alt={garmentAlt(c.id)}
                 width={315}
                 height={399}
                 decoding="async"
@@ -194,14 +196,15 @@ export default function Hero() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/media/brand/logo.webp"
-              alt=""
+              alt="Zyrobe"
+              aria-hidden="true"
               width={1400}
               height={473}
               fetchPriority="high"
               className="h-auto w-full"
               draggable={false}
             />
-            <span className="sr-only">Zyrobe</span>
+            <span className="sr-only">Zyrobe: the wardrobe app for India with an AI stylist</span>
           </h1>
           <p className="display mt-5 max-w-[16ch] text-[2.05rem] text-ink sm:max-w-none sm:text-5xl md:mt-7 lg:text-[3.6rem]">
             {PROMISE.split(", ")[0]}, <em className="italic">{PROMISE.split(", ")[1]}</em>

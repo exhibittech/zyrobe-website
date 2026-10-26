@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -44,6 +44,9 @@ const body: GuideBody = {
           <Tip>
             <p>Plan the shoes, jewellery and dupatta or jacket with each outfit. Searching for the right earrings or the matching mojaris is what usually makes people late.</p>
           </Tip>
+          <p>
+            Build each look in the <GuideLink href="/features/outfit-maker">outfit maker</GuideLink> so you can see it before the day, and put the plan on your calendar with the <GuideLink href="/features/outfit-planner">outfit planner</GuideLink>.
+          </p>
         </>
       ),
     },
@@ -103,6 +106,9 @@ const body: GuideBody = {
           <p>
             Whatever the festival, the first step is the same: write down the events, then decide outfits, then shop
             for anything missing.
+          </p>
+          <p>
+            Wedding season often follows Diwali. For the haldi, mehendi, sangeet, ceremony and reception, see <GuideLink href="/guides/indian-wedding-guest-outfits">what to wear to an Indian wedding</GuideLink>.
           </p>
         </>
       ),

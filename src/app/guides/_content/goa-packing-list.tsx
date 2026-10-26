@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -42,6 +42,9 @@ const body: GuideBody = {
               ["Light layer", "1", "For November to February evenings and air-conditioned rooms"],
             ]}
           />
+          <p>
+            Want these as outfits for each day? The <GuideLink href="/features/trip-packing-planner">trip packing planner</GuideLink> builds a day-by-day packing list from your own wardrobe. Heading south next? See the <GuideLink href="/guides/kerala-packing-list">Kerala packing list</GuideLink>.
+          </p>
         </>
       ),
     },
@@ -104,6 +107,9 @@ const body: GuideBody = {
               "One extra set of clothes, because things dry slowly in the humidity",
             ]}
           />
+          <p>
+            For more on quick-drying fabrics and keeping clothes dry in humid weather, see our guide to <GuideLink href="/guides/monsoon-wardrobe-guide">what to wear in the monsoon</GuideLink>.
+          </p>
         </>
       ),
     },

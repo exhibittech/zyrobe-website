@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -81,18 +81,12 @@ const body: GuideBody = {
       id: "list",
       title: "What should I pack for five days in Dubai?",
       body: (
-        <GuideTable
-          caption="For a five-day trip"
-          head={["Item", "How many", "Notes"]}
-          rows={[
-            ["Light tops with sleeves", "5", "Cotton or linen; short sleeves are fine, sleeveless less so in malls and souks"],
-            ["Trousers, long skirts or maxi dresses", "3", "Loose and breathable"],
-            ["Smart evening outfits", "1 to 2", "For a nice dinner or a show"],
-            ["Light layer", "1", "Malls, the metro and restaurants are strongly air-conditioned"],
-            ["Swimwear and a cover-up", "1 to 2, plus 1", "For the beach, the pool or a water park"],
-            ["Shoes", "2 to 3 pairs", "Comfortable walking shoes, sandals, and one smarter pair"],
-          ]}
-        />
+        <>
+          <GuideTable            caption="For a five-day trip"            head={["Item", "How many", "Notes"]}            rows={[              ["Light tops with sleeves", "5", "Cotton or linen; short sleeves are fine, sleeveless less so in malls and souks"],              ["Trousers, long skirts or maxi dresses", "3", "Loose and breathable"],              ["Smart evening outfits", "1 to 2", "For a nice dinner or a show"],              ["Light layer", "1", "Malls, the metro and restaurants are strongly air-conditioned"],              ["Swimwear and a cover-up", "1 to 2, plus 1", "For the beach, the pool or a water park"],              ["Shoes", "2 to 3 pairs", "Comfortable walking shoes, sandals, and one smarter pair"],            ]}          />
+          <p>
+            Plan each day with the <GuideLink href="/features/trip-packing-planner">trip packing planner</GuideLink>. Continuing to Europe? See the <GuideLink href="/guides/paris-packing-list">Paris packing list</GuideLink>.
+          </p>
+        </>
       ),
     },
     {

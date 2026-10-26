@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -37,6 +37,9 @@ const body: GuideBody = {
           <p>
             Put what you wear most at eye level and at the front. Clothes you wear a few times a year can go higher up, at
             the back, or on the loft.
+          </p>
+          <p>
+            Zyrobe’s <GuideLink href="/features/digital-wardrobe">digital wardrobe</GuideLink> sorts photos of your clothes by type for you, so you can filter tops, bottoms, footwear and accessories.
           </p>
         </>
       ),
@@ -79,6 +82,9 @@ const body: GuideBody = {
             <li>Add a moisture absorber to every box, especially before the monsoon.</li>
             <li>Label each box with what is inside.</li>
           </ul>
+          <p>
+            To keep a cupboard dry before the rains, see our guide to <GuideLink href="/guides/monsoon-wardrobe-guide">what to wear in the monsoon</GuideLink>.
+          </p>
         </>
       ),
     },
@@ -104,12 +110,12 @@ const body: GuideBody = {
       id: "remember",
       title: "How do I remember where everything is?",
       body: (
-        <p>
-          This is where most systems break. Six months later, nobody remembers which suitcase has the winter jackets or
-          which cupboard at your parents’ home has the wedding sherwani. Label shelves and boxes, and keep a simple record
-          of where each stored item is. Photos help too: a picture of a box’s contents is quicker to check than opening
-          every box on the loft.
-        </p>
+        <>
+          <p>            This is where most systems break. Six months later, nobody remembers which suitcase has the winter jackets or            which cupboard at your parents’ home has the wedding sherwani. Label shelves and boxes, and keep a simple record            of where each stored item is. Photos help too: a picture of a box’s contents is quicker to check than opening            every box on the loft.          </p>
+          <p>
+            The <GuideLink href="/features/clothes-storage-tracker">clothes storage tracker</GuideLink> does this on your phone: name each cupboard, drawer or suitcase, add a photo, and tick the clothes kept there.
+          </p>
+        </>
       ),
     },
     {

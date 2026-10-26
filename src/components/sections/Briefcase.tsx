@@ -14,6 +14,13 @@ const DAYS = [
   { label: "Day 2 · Meetings & dinner in Le Marais", items: ["Navy shirt", "Beige trousers", "White sneakers", "Black watch"] },
   { label: "Day 3 · Breakfast & departure", items: ["Colorblock polo", "Black jeans", "Sneakers", "Sunglasses"] },
 ];
+// The packing checklist as items get ticked (the last frame is the one shown with reduced motion).
+const ESS_ALT = [
+  "Essentials checklist: toothbrush, deodorant, phone charger, sunglasses and underwear, none ticked",
+  "Essentials checklist with the toothbrush ticked",
+  "Essentials checklist with the toothbrush and phone charger ticked",
+  "Essentials checklist: toothbrush, phone charger and sunglasses ticked",
+];
 const DAY_POS = ["md:top-[21%]", "md:top-[41%]", "md:top-[61%]"];
 
 function DayCard({ day, i, className = "" }: { day: (typeof DAYS)[number]; i: number; className?: string }) {
@@ -107,7 +114,7 @@ function Stage() {
               <div className="absolute inset-x-0 top-0 h-[5.2%] bg-[length:100%_auto] bg-top" style={{ backgroundImage: `url(${f("pt_items")})` }} />
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img data-scr="saved" src={f("pt_saved")} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden" />
+            <img data-scr="saved" src={f("pt_saved")} alt="Paris Trip outfits tab with day-by-day outfits and a Looks Saved message" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img data-scr="items" src={f("pt_items")} alt="Paris Trip: 11 wardrobe pieces packed" loading="lazy" className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden" />
           </Phone>
@@ -133,7 +140,8 @@ function Stage() {
                 key={n}
                 {...(n ? { "data-tick": true } : {})}
                 src={f(`ess_list_${n}`)}
-                alt={n === 3 ? "Essentials checklist: toothbrush, phone charger and sunglasses ticked" : ""}
+                alt={ESS_ALT[n]}
+                aria-hidden={n === 3 ? undefined : true}
                 loading="lazy"
                 className={`absolute inset-0 h-full w-full ${n ? "opacity-0 motion-reduce:opacity-0" : ""} ${n === 3 ? "motion-reduce:opacity-100" : ""}`}
               />

@@ -3,6 +3,7 @@
 import { useRef, useState, type CSSProperties } from "react";
 import { gsap, ScrollTrigger, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { E, L, P } from "@/components/story/ease";
+import { SATIN_ALT } from "@/lib/alt";
 
 /**
  * The film's eleven wardrobe problems. x/y/r: position + tilt in the film's 1920x1080 frame;
@@ -278,7 +279,7 @@ export default function Questions() {
         {/* Dark satin with a raking light; the camera pushes slowly across it. */}
         <div data-cam className="absolute -inset-[9%] will-change-transform">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/media/brand/satin-dark.webp" alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
+          <img src="/media/brand/satin-dark.webp" alt={SATIN_ALT.dark} className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
           <div
             data-band
             className="absolute inset-0 overflow-hidden will-change-transform"
@@ -296,7 +297,7 @@ export default function Questions() {
             <img
               data-band-img
               src="/media/brand/satin-md.webp"
-              alt=""
+              alt={SATIN_ALT.sheen}
               className="absolute inset-0 h-full w-full object-cover will-change-transform"
               style={{ filter: "brightness(.8) sepia(.15)" }}
               loading="lazy"

@@ -13,9 +13,9 @@ import {
 
 const UPDATED = "2026-10-26";
 const TITLE = "About Zyrobe: the facts at a glance";
-const DESCRIPTION = `Zyrobe is a wardrobe app with an AI stylist, made in India by ${COMPANY}. What it does, what it costs, how it uses AI and how it handles your data.`;
+const DESCRIPTION = "Zyrobe is an Android wardrobe app with an AI stylist, made in India by Exhibit Technologies. What it does, what it costs, how it uses AI and handles your data.";
 
-export const metadata = contentMetadata({ path: "/about", title: "About Zyrobe: facts, pricing and who makes it", description: DESCRIPTION });
+export const metadata = contentMetadata({ path: "/about", title: "About Zyrobe: AI wardrobe app made in India", description: DESCRIPTION });
 
 const SECTIONS = [
   { id: "what-is-zyrobe", title: "What is Zyrobe?" },
@@ -76,7 +76,7 @@ export default function AboutPage() {
         crumbs={[{ name: "About", path: "/about" }]}
         eyebrow="About"
         title={TITLE}
-        lead={`Zyrobe is a wardrobe app with an AI stylist, made in India by ${COMPANY}. It keeps all your clothes in one place and helps you decide what to wear.`}
+        lead={`Zyrobe is an Android wardrobe app with an AI stylist, made in India by ${COMPANY}. It keeps all your clothes in one place and helps you decide what to wear.`}
         updated={UPDATED}
       />
 
@@ -84,8 +84,8 @@ export default function AboutPage() {
         <section aria-labelledby="what-is-zyrobe">
           <h2 id="what-is-zyrobe">What is Zyrobe?</h2>
           <p>
-            Zyrobe keeps all your clothes in one place and helps you decide what to wear. Take a photo of your clothes and Zyrobe sorts
-            them for you. Then try outfits on, plan your week and pack for trips, all from the clothes you already own.
+            Zyrobe is an Android wardrobe app for India. It keeps all your clothes in one place and helps you decide what to wear. Take a
+            photo of your clothes and Zyrobe sorts them for you. Then try outfits on, plan your week and pack for trips, all from the clothes you already own.
           </p>
           <p>
             Its promise is <strong>{PROMISE}</strong> Its tagline is <strong>{TAGLINE}</strong>

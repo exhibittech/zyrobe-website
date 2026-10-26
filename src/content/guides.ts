@@ -19,61 +19,61 @@ export const GUIDE_CATEGORIES: GuideCategory[] = ["Occasions", "Seasons", "Trave
 export const GUIDES: GuideEntry[] = [
   {
     slug: "indian-wedding-guest-outfits",
-    title: "What to wear to an Indian wedding as a guest",
+    title: "What to wear to an Indian wedding: outfits for each function",
     description:
-      "Outfit ideas for every function of an Indian wedding (haldi, mehendi, sangeet, the wedding and the reception) for men and women, plus colours to avoid and how to repeat outfits well.",
+      "What to wear to an Indian wedding as a guest: outfit ideas for the haldi, mehendi, sangeet, ceremony and reception, for men and women, with colours to avoid.",
     updated: "2026-10-26",
     category: "Occasions",
     answer:
-      "Dress for each function, not just the wedding day. Wear light, washable clothes in yellow or other bright colours for the haldi, comfortable colourful outfits for the mehendi, something dressy you can dance in for the sangeet, your most traditional festive outfit for the wedding ceremony, and an evening look for the reception. In most families, avoid bridal red and all-white or all-black outfits unless the hosts ask for them, and check the invite for a dress code or colour theme.",
+      "For an Indian wedding, dress for each function, not just the wedding day. Wear light, washable clothes in yellow or other bright colours for the haldi, comfortable colourful outfits for the mehendi, something dressy you can dance in for the sangeet, your most traditional festive outfit for the wedding ceremony, and an evening look for the reception. In most families, avoid bridal red and all-white or all-black outfits unless the hosts ask for them, and check the invite for a dress code or colour theme.",
     places: ["India"],
     garments: ["c13", "c22", "c11"],
     related: ["diwali-festive-outfit-planning", "organise-your-wardrobe", "goa-packing-list"],
   },
   {
     slug: "diwali-festive-outfit-planning",
-    title: "How to plan your Diwali and festive season outfits",
+    title: "Diwali outfit ideas: plan an outfit for every festive day",
     description:
-      "A simple plan for the five days of Diwali and the festive season: list your events, pick one outfit per event, mix and match pieces, and dress safely around diyas and crackers.",
+      "Diwali outfit ideas and a simple plan for the five days of the festival: one outfit per event, festive pieces that mix and match, and what is safe near diyas.",
     updated: "2026-10-26",
     category: "Occasions",
     answer:
-      "List every event first (the office party, Dhanteras shopping, the Lakshmi puja at home, family visits and Bhai Dooj), then give each one an outfit before the week starts. Build several looks from a few festive pieces by changing the dupatta, jacket or accessories, check the fit and ironing two weeks ahead, and wear cotton or other natural fabrics near diyas and crackers, because synthetics can melt.",
+      "For Diwali, give each day its own outfit: smart, comfortable ethnic wear for Dhanteras shopping, something easy and washable for Choti Diwali, your best or new festive outfit for the Lakshmi Puja, and comfortable festive wear for Bhai Dooj visits. List every event first, build several looks from a few festive pieces by changing the dupatta, jacket or accessories, check the fit and ironing two weeks ahead, and wear cotton or other natural fabrics near diyas and crackers, because synthetics can melt.",
     places: ["India"],
     garments: ["c13", "c09", "c22"],
     related: ["indian-wedding-guest-outfits", "organise-your-wardrobe", "office-wear-indian-summer"],
   },
   {
     slug: "monsoon-wardrobe-guide",
-    title: "Monsoon wardrobe guide: what to wear in the rains",
+    title: "What to wear in the monsoon: a wardrobe guide for India",
     description:
-      "What to wear in the Indian monsoon: quick-drying fabrics, darker colours, waterproof footwear, and how to dry and store clothes so they don’t smell musty. With notes for Mumbai, Kerala and Kolkata.",
+      "What to wear in the Indian monsoon: quick-drying fabrics, dark colours, waterproof shoes and drying tips, with notes for Mumbai, Delhi, Chennai and Kolkata.",
     updated: "2026-10-26",
     category: "Seasons",
     answer:
-      "In the monsoon, wear light, quick-drying fabrics such as polyester or nylon blends and thin cotton, choose darker colours that hide splashes, and skip heavy denim, silk, suede and leather. Waterproof sandals or rubber shoes work better than canvas or leather. At home, dry clothes with moving air, never fold anything damp, and keep cupboards dry with moisture absorbers so clothes don’t smell musty.",
-    places: ["Mumbai", "Kerala", "Kolkata", "India"],
+      "In the Indian monsoon, wear light, quick-drying fabrics such as polyester or nylon blends and thin cotton, choose darker colours that hide splashes, and skip heavy denim, silk, suede and leather. Waterproof sandals or rubber shoes work better than canvas or leather. At home, dry clothes with moving air, never fold anything damp, and keep cupboards dry with moisture absorbers so clothes don’t smell musty.",
+    places: ["Mumbai", "Pune", "Delhi", "Kolkata", "Chennai", "Bengaluru", "Hyderabad", "Kerala", "India"],
     garments: ["c00", "c18", "c02"],
     related: ["kerala-packing-list", "organise-your-wardrobe", "office-wear-indian-summer"],
   },
   {
     slug: "office-wear-indian-summer",
-    title: "Office wear for Indian summers: a small capsule that beats the heat",
+    title: "Summer office wear in India: a 15-piece capsule wardrobe",
     description:
-      "A 15-piece office capsule for hot Indian cities like Delhi, Chennai and Bengaluru: breathable fabrics, light colours, and one layer for the air-conditioned office.",
+      "Summer office wear for hot Indian cities like Delhi, Mumbai, Chennai and Bengaluru: a 15-piece capsule of breathable clothes in light colours, plus an AC layer.",
     updated: "2026-10-26",
     category: "Seasons",
     answer:
-      "For office wear in an Indian summer, build a small capsule of fifteen breathable cotton and linen pieces in light colours: six tops, four bottoms, two light layers for the air-conditioned office and three pairs of shoes. Choose loose, comfortable fits and pieces that all go together: six tops and four bottoms alone make 24 different outfits.",
-    places: ["Delhi", "Chennai", "Bengaluru", "India"],
+      "For summer office wear in India, build a small capsule of fifteen breathable cotton and linen pieces in light colours: six tops, four bottoms, two light layers for the air-conditioned office and three pairs of shoes. Choose loose, comfortable fits and pieces that all go together: six tops and four bottoms alone make 24 different outfits.",
+    places: ["Delhi", "Mumbai", "Chennai", "Bengaluru", "Hyderabad", "Pune", "Kolkata", "India"],
     garments: ["c09", "c22", "c05"],
     related: ["organise-your-wardrobe", "monsoon-wardrobe-guide", "dubai-packing-list"],
   },
   {
     slug: "goa-packing-list",
-    title: "Goa packing list for every season",
+    title: "Goa packing list: what to pack for every season",
     description:
-      "What to pack for Goa from November to February, in the hot months and in the monsoon: beachwear, cover-ups for towns and churches, footwear and rain gear.",
+      "Goa packing list for every season: what to pack for November to February, the hot months and the monsoon, with beachwear, cover-ups, footwear and rain gear.",
     updated: "2026-10-26",
     category: "Travel",
     answer:
@@ -84,9 +84,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: "manali-shimla-winter-packing-list",
-    title: "Manali and Shimla winter packing list",
+    title: "Manali and Shimla winter packing list: what to wear in snow",
     description:
-      "How to dress in layers for Manali and Shimla in winter: thermals, a warm insulated jacket, waterproof boots with grip, gloves, a cap, and what you can rent for snow activities.",
+      "Manali and Shimla winter packing list: dress in layers with thermals, an insulated jacket, grippy waterproof boots, gloves and a cap, and what to rent for snow.",
     updated: "2026-10-26",
     category: "Travel",
     answer:
@@ -97,9 +97,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: "kerala-packing-list",
-    title: "Kerala packing list: backwaters, beaches and hill stations",
+    title: "Kerala packing list: what to pack for backwaters and hills",
     description:
-      "What to pack for Kerala: breathable clothes for the hot, humid coast, a warm layer for Munnar and Wayanad, rain gear for the monsoons, and what to wear to temples.",
+      "Kerala packing list: breathable clothes for the humid coast, a warm layer for Munnar and Wayanad, rain gear for the two monsoons, and what to wear to temples.",
     updated: "2026-10-26",
     category: "Travel",
     answer:
@@ -110,9 +110,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: "paris-packing-list",
-    title: "What to pack for Paris, season by season",
+    title: "Paris packing list: what to pack, season by season",
     description:
-      "A Paris packing list for winter, spring, summer and autumn: layers, a rain jacket, comfortable walking shoes and smart-casual outfits, with tips for travellers from India.",
+      "Paris packing list for winter, spring, summer and autumn: layers, a rain jacket, comfortable shoes and smart-casual outfits, with tips for Indian travellers.",
     updated: "2026-10-26",
     category: "Travel",
     answer:
@@ -123,9 +123,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: "dubai-packing-list",
-    title: "Dubai packing list for travellers from India",
+    title: "Dubai packing list: what to wear, for travellers from India",
     description:
-      "What to wear in Dubai in summer and winter: light, breathable clothes, modest outfits for malls and mosques, a layer for the air conditioning, and what to pack for a desert safari.",
+      "Dubai packing list: light, breathable clothes for summer and winter, modest outfits for malls and mosques, a layer for the AC, and desert safari tips.",
     updated: "2026-10-26",
     category: "Travel",
     answer:
@@ -136,9 +136,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: "organise-your-wardrobe",
-    title: "How to organise your wardrobe and keep it that way",
+    title: "How to organise your wardrobe: a step-by-step guide",
     description:
-      "A step-by-step way to organise a wardrobe: sort what you own, group it by type, store off-season clothes, note where everything is kept, and a five-minute weekly reset.",
+      "How to organise your wardrobe: sort what you own, group it by type, store off-season clothes, note where everything is kept, and a five-minute weekly reset.",
     updated: "2026-10-26",
     category: "Wardrobe basics",
     answer:

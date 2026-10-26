@@ -12,9 +12,9 @@ import { CONTACT_EMAIL } from "@/lib/site";
 const UPDATED = "2026-10-26";
 const TITLE = "Zyrobe FAQ: questions, answered";
 const DESCRIPTION =
-  "Answers to common questions about Zyrobe: getting started, AI features and credits, plans and billing, privacy and your data, your account, and where to get the app.";
+  "Zyrobe FAQ: is the app free, how credits and plans work, how accurate virtual try-on is, how your photos are kept private, and how to delete your account.";
 
-export const metadata = contentMetadata({ path: "/faq", title: "FAQ: questions about Zyrobe, answered", description: DESCRIPTION });
+export const metadata = contentMetadata({ path: "/faq", title: "Zyrobe FAQ: is it free, credits and photo privacy", description: DESCRIPTION });
 
 const topicId = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const ALL = FAQ_GROUPS.flatMap((g) => g.items);
@@ -47,7 +47,7 @@ export default function FaqPage() {
         title={TITLE}
         lead={
           <>
-            Everything people ask about Zyrobe, from getting started to plans, privacy and your account. Anything else? Write to us at{" "}
+            Zyrobe is a free-to-download Android wardrobe app. These are the answers to what people ask most, from getting started and credits to plans, privacy and your account. Anything else? Write to us at{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-ink underline decoration-taupe underline-offset-4 hover:decoration-ink">
               {CONTACT_EMAIL}
             </a>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import GuidePage from "@/components/guides/GuidePage";
 import { guideImage } from "@/components/guides/schema";
 import { GUIDES, guideBySlug } from "@/content/guides";
+import { pageAlternates } from "@/lib/seo";
 import { GUIDE_BODIES } from "../_content";
 
 export const dynamicParams = false;
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: g.title,
     description: g.description,
-    alternates: { canonical: path },
+    alternates: pageAlternates(path),
     openGraph: {
       type: "article",
       url: path,

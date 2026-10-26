@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -96,6 +96,9 @@ const body: GuideBody = {
               "One or two extra sets of clothes",
             ]}
           />
+          <p>
+            For more on quick-drying fabrics and drying clothes in humid weather, see our guide to <GuideLink href="/guides/monsoon-wardrobe-guide">what to wear in the monsoon</GuideLink>.
+          </p>
         </>
       ),
     },
@@ -103,18 +106,12 @@ const body: GuideBody = {
       id: "five-days",
       title: "What should I pack for five days in Kerala?",
       body: (
-        <GuideTable
-          caption="A coast-and-hills trip outside the monsoon"
-          head={["Item", "How many", "Notes"]}
-          rows={[
-            ["Light tops", "5", "Cotton or linen; one or two with long sleeves for evenings"],
-            ["Light trousers, skirts or shorts", "3", "At least one long pair for temples and the hills"],
-            ["Warm layer", "1", "A sweater or fleece for Munnar or Wayanad"],
-            ["Traditional outfit", "1", "A saree, a mundu or a long skirt if you plan to visit temples"],
-            ["Swimwear and a cover-up", "1 each", "For Kovalam, Varkala or the hotel pool"],
-            ["Shoes", "2 pairs", "Slip-on sandals and walking shoes with a good grip"],
-          ]}
-        />
+        <>
+          <GuideTable            caption="A coast-and-hills trip outside the monsoon"            head={["Item", "How many", "Notes"]}            rows={[              ["Light tops", "5", "Cotton or linen; one or two with long sleeves for evenings"],              ["Light trousers, skirts or shorts", "3", "At least one long pair for temples and the hills"],              ["Warm layer", "1", "A sweater or fleece for Munnar or Wayanad"],              ["Traditional outfit", "1", "A saree, a mundu or a long skirt if you plan to visit temples"],              ["Swimwear and a cover-up", "1 each", "For Kovalam, Varkala or the hotel pool"],              ["Shoes", "2 pairs", "Slip-on sandals and walking shoes with a good grip"],            ]}          />
+          <p>
+            Turn this list into outfits for each day with the <GuideLink href="/features/trip-packing-planner">trip packing planner</GuideLink>. Adding a beach stop? See the <GuideLink href="/guides/goa-packing-list">Goa packing list</GuideLink>.
+          </p>
+        </>
       ),
     },
     {

@@ -6,7 +6,17 @@ export type Faq = { q: string; a: string; link?: { href: string; label: string }
 export const FAQS: Faq[] = [
   {
     q: "What is Zyrobe?",
-    a: "Zyrobe keeps all your clothes in one place and helps you decide what to wear. Take a photo of your clothes and Zyrobe sorts them for you. Then try outfits on, plan your week and pack for trips, all from the clothes you already own.",
+    a: "Zyrobe is an Android wardrobe app for India. It keeps all your clothes in one place and helps you decide what to wear. Take a photo of your clothes and Zyrobe sorts them for you. Then try outfits on, plan your week and pack for trips, all from the clothes you already own.",
+  },
+  {
+    q: "Can Zyrobe tell me what to wear today?",
+    a: "Yes. Ask the AI stylist what to wear for work, a party, a date or a trip. It picks a complete outfit from the clothes you own, and its ideas consider your style and the weather where you will be.",
+    link: { href: "/features/ai-stylist", label: "How the AI stylist works" },
+  },
+  {
+    q: "Can Zyrobe help me pack for a trip?",
+    a: "Yes. Tell Zyrobe where you are going, when and why. It checks the forecast there, plans an outfit for each day from your own clothes, adds an essentials checklist and shares the plan as a PDF.",
+    link: { href: "/features/trip-packing-planner", label: "How the trip packing planner works" },
   },
   {
     q: "Is Zyrobe free?",

@@ -5,8 +5,8 @@ import { CONTACT_EMAIL } from "@/lib/site";
 // Legal text: keep word-for-word in sync with what Google Play reviewed (Play Console links to
 // https://zyrobe.com/privacy and https://zyrobe.com/privacy#delete-account). Change the date when the text changes.
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "How Zyrobe collects, uses and protects your information, and how to delete your account and data.",
+  title: "Privacy Policy: how Zyrobe handles your photos and data",
+  description: "How Zyrobe collects, uses and protects your information, how your photos are handled and who processes them, and how to delete your account and data.",
   alternates: { canonical: "/privacy" },
 };
 

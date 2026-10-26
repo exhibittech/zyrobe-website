@@ -3,6 +3,7 @@
 import { useRef, useState, type CSSProperties } from "react";
 import { gsap, ScrollTrigger, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { E, L, P } from "@/components/story/ease";
+import { SATIN_ALT } from "@/lib/alt";
 import { PROMISE, SHORT_DESCRIPTION, TAGLINE } from "@/lib/site";
 
 /**
@@ -26,6 +27,26 @@ const LAYERS = [
   { n: "act4", x: 831, y: 522, w: 228, h: 248, r: 34, z: 225 },
 ];
 const SW = 1126, SH = 2436;
+
+// What each cut-out part of the home screen shows. The phone is one role="img" (below), so these are for image search.
+const HOME_ALT = "Zyrobe home screen: wardrobe stats, a style calendar and shortcuts to add an item, plan an outfit, try on and pack a trip";
+const LAYER_ALT: Record<string, string> = {
+  base: "Zyrobe home screen background",
+  nav: "Bottom navigation bar with Home, Wardrobe, Outfits, Stylist and Profile tabs",
+  wardh: "My Wardrobe header with a View All button",
+  greet: "Good Morning greeting with the line Better outfits. Better days.",
+  cal: "Style Calendar card for planning looks, showing three days in October",
+  rack: "Jackets and shirts hanging on a wooden clothes rack beside a plant",
+  stat1: "Wardrobe stat card: 37 clothing items",
+  stat2: "Wardrobe stat card: 5 accessories",
+  act1: "Add Item shortcut with a camera icon",
+  act2: "Plan Outfit shortcut with a calendar icon",
+  act3: "Try-On shortcut with a hanger icon",
+  act4: "Briefcase shortcut with a briefcase icon",
+  vibe: "Today's Vibe card: Casual and Confident, with a green jacket, watch and white sneakers",
+  plan: "Plan Week button",
+  today: "Today date badge showing Oct 21",
+};
 
 // Phone geometry as fractions of the phone width (matches components/ui/Phone).
 const BEZEL = 0.028, R_FRAME = 0.15, R_SCREEN = 0.125;
@@ -142,7 +163,7 @@ export default function HomeReveal() {
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/media/brand/satin-soft.webp" alt="" className="absolute inset-0 h-full w-full object-cover opacity-80" loading="lazy" decoding="async" />
+          <img src="/media/brand/satin-soft.webp" alt={SATIN_ALT.cream} aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-80" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_70%_55%,rgb(255_253_249/.55),transparent_70%)]" />
         </div>
 
@@ -166,6 +187,8 @@ export default function HomeReveal() {
             <div data-tilt className="relative" style={{ transformStyle: "preserve-3d" }}>
               <div
                 data-rig
+                role="img"
+                aria-label={HOME_ALT}
                 className="relative will-change-transform"
                 style={
                   {
@@ -197,7 +220,7 @@ export default function HomeReveal() {
                 >
                   <div className="relative h-full w-full overflow-hidden bg-cream" style={{ borderRadius: `calc(var(--W) * ${R_SCREEN})` }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/media/home/base.webp" alt="" className="absolute inset-0 h-full w-full" loading="lazy" decoding="async" draggable={false} />
+                    <img src="/media/home/base.webp" alt={LAYER_ALT.base} className="absolute inset-0 h-full w-full" loading="lazy" decoding="async" draggable={false} />
                   </div>
                 </div>
                 {/* The parts of the home screen */}
@@ -233,7 +256,7 @@ export default function HomeReveal() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`/media/home/${m.n}.webp`}
-                        alt=""
+                        alt={LAYER_ALT[m.n]}
                         className="absolute inset-0 h-full w-full"
                         style={{ borderRadius: radius }}
                         loading="lazy"

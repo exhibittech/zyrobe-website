@@ -130,7 +130,7 @@ function Stage() {
             key={n}
             data-chip={n}
             src={`/media/comps/act_${n}.webp`}
-            alt={n}
+            alt={`Activity: ${n}`}
             w={size(`/media/comps/act_${n}.webp`).w * 0.00165}
             r="pill"
             className={`left-1/2 top-1/2 opacity-0 will-change-transform ${WEEK.some((w) => w.chip === n) ? "" : "max-md:hidden"}`}

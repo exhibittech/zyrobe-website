@@ -12,6 +12,7 @@ type Props = {
   style?: CSSProperties;
   /** Data attribute used to pick the element in the stage timeline. */
   tag: string;
+  /** What the picture shows (for image search). The pop-out is always hidden from screen readers: the chapter text says the same. */
   alt?: string;
 };
 
@@ -23,7 +24,7 @@ export default function Pop({ src, w, r, rot = 0, className = "", style, tag, al
     <img
       src={src}
       alt={alt}
-      aria-hidden={alt ? undefined : true}
+      aria-hidden="true"
       width={s.w}
       height={s.h}
       loading="lazy"

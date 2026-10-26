@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import PlayButton from "@/components/ui/PlayButton";
 import { gsap, useGSAP, prefersReducedMotion, ScrollTrigger } from "@/lib/gsap";
+import { garmentAlt } from "@/lib/alt";
 import { SHORT_DESCRIPTION, TAGLINE } from "@/lib/site";
 
 // Cut-outs drifting at the edges: [file, left%, top%, width (vw, desktop), rotate, parallax depth, mobile]
@@ -78,7 +79,7 @@ export default function Download() {
           <img
             data-piece-in
             src={`/media/garments/${f}.webp`}
-            alt=""
+            alt={garmentAlt(f)}
             loading="lazy"
             decoding="async"
             className="w-full drop-shadow-[0_24px_30px_rgb(46_28_18/.28)]"
@@ -93,7 +94,8 @@ export default function Download() {
         <img
           data-logo
           src="/media/brand/logo.webp"
-          alt=""
+          alt="Zyrobe"
+          aria-hidden="true"
           width={1400}
           height={473}
           loading="lazy"

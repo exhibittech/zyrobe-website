@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -11,9 +11,14 @@ const body: GuideBody = {
           <p>Three things matter most: breathable fabric, a loose fit and light colours. The heat is not the same everywhere, though:</p>
           <ul>
             <li><strong>Delhi and much of North India:</strong> April to June is very hot and dry, and the commute is the hardest part of the day. Loose fits and light colours help most.</li>
-            <li><strong>Chennai and the coasts:</strong> hot and humid for much of the year. Sweat is the main problem, so choose fabrics that breathe and dry well.</li>
+            <li><strong>Chennai, Mumbai, Kolkata and the coasts:</strong> hot and humid for much of the year. Sweat is the main problem, so choose fabrics that breathe and dry well.</li>
             <li><strong>Bengaluru:</strong> milder, warmest from March to May, with cooler evenings. A light layer is often enough to stay comfortable all day.</li>
+            <li><strong>Hyderabad:</strong> April to June is very hot and dry. Loose fits, light colours and breathable cotton help most.</li>
+            <li><strong>Pune:</strong> warm to hot from March to May, with cooler evenings. A light layer for the ride home is often enough.</li>
           </ul>
+          <p>
+            When the rains arrive, see our guide to <GuideLink href="/guides/monsoon-wardrobe-guide">what to wear in the monsoon</GuideLink> for fabrics, shoes and a spare set for the office.
+          </p>
         </>
       ),
     },
@@ -55,6 +60,9 @@ const body: GuideBody = {
           <p>
             Most of these you probably own already. Start with what you have, wear the capsule for two weeks, and only then
             fill a real gap.
+          </p>
+          <p>
+            Build the capsule in the <GuideLink href="/features/outfit-maker">outfit maker</GuideLink> to see which tops and bottoms work together, and keep every piece in your <GuideLink href="/features/digital-wardrobe">digital wardrobe</GuideLink>.
           </p>
         </>
       ),
@@ -108,6 +116,9 @@ const body: GuideBody = {
             <li>Cotton kurtas with palazzos or straight pants mix easily with the rest of the capsule.</li>
             <li>Keep heavily embroidered or festive pieces for festivals and office celebrations.</li>
           </ul>
+          <p>
+            Festive weeks are different: see our <GuideLink href="/guides/diwali-festive-outfit-planning">Diwali outfit ideas</GuideLink> for what to wear when the office celebrates.
+          </p>
         </>
       ),
     },
@@ -115,16 +126,12 @@ const body: GuideBody = {
       id: "routine",
       title: "How do I plan the week so mornings are easy?",
       body: (
-        <Checklist
-          title="Sunday-evening routine"
-          items={[
-            "Check the week’s weather and your meetings",
-            "Pick an outfit for each day, including shoes",
-            "Iron or steam everything for the first three days",
-            "Put your layer and a spare top in your office bag",
-            "Move anything that needs washing or repair to one side",
-          ]}
-        />
+        <>
+          <Checklist            title="Sunday-evening routine"            items={[              "Check the week’s weather and your meetings",              "Pick an outfit for each day, including shoes",              "Iron or steam everything for the first three days",              "Put your layer and a spare top in your office bag",              "Move anything that needs washing or repair to one side",            ]}          />
+          <p>
+            The <GuideLink href="/features/outfit-planner">outfit planner</GuideLink> can do this for you: it plans an outfit for each day of the week from your own clothes.
+          </p>
+        </>
       ),
     },
   ],

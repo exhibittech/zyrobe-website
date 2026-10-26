@@ -7,6 +7,7 @@ import Pop from "@/components/features-a/Pop";
 import { popOut, toPhone, useStageTimeline } from "@/components/features-a/stage";
 import { Chevron, CheckCircle, Sparkle, StatusBar, u } from "@/components/features-a/ui";
 import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
+import { garmentAlt } from "@/lib/alt";
 
 type Kind = "top" | "bottom";
 type Piece = { id: string; kind: Kind; name: string };
@@ -43,9 +44,9 @@ function LookCard({ s }: { s: Saved }) {
     <div className="overflow-hidden bg-white" style={{ borderRadius: u(3.4) }}>
       <div className="relative flex items-center justify-center bg-[#f4f2ee]" style={{ aspectRatio: "460 / 400", gap: u(1), padding: u(2) }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={pic(s.top)} alt={s.top.name} className="h-auto" style={{ width: "46%" }} draggable={false} />
+        <img src={pic(s.top)} alt={garmentAlt(s.top.id)} className="h-auto" style={{ width: "46%" }} draggable={false} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={pic(s.bottom)} alt={s.bottom.name} className="h-auto" style={{ width: "38%" }} draggable={false} />
+        <img src={pic(s.bottom)} alt={garmentAlt(s.bottom.id)} className="h-auto" style={{ width: "38%" }} draggable={false} />
       </div>
       <div style={{ padding: `${u(2.4)} ${u(3)} ${u(3)}` }}>
         <p className="truncate font-bold text-ink" style={{ fontSize: u(3.6) }}>{s.name}</p>
@@ -275,8 +276,8 @@ export default function OutfitStudio() {
       style={{ width: "var(--phone-w)", aspectRatio: "900 / 1948" }}
     >
       {/* Outfits already in the collection */}
-      <Pop tag="stack" src="/media/comps/ocard_3.webp" w={0.44} r={0.074} rot={9} className="z-0 left-[112%] top-[16%] max-md:hidden" />
-      <Pop tag="stack" src="/media/comps/ocard_4.webp" w={0.44} r={0.074} rot={-4} className="z-0 left-[100%] top-[24%] max-md:hidden" />
+      <Pop tag="stack" src="/media/comps/ocard_3.webp" alt="Saved outfit Plaid Layer: sneakers, a maroon polo, jeans and a watch, 4 items" w={0.44} r={0.074} rot={9} className="z-0 left-[112%] top-[16%] max-md:hidden" />
+      <Pop tag="stack" src="/media/comps/ocard_4.webp" alt="Saved outfit Casual: a denim shirt and dark jeans, 2 items" w={0.44} r={0.074} rot={-4} className="z-0 left-[100%] top-[24%] max-md:hidden" />
 
       {/* Hint */}
       <div data-hint className="invisible absolute z-30 max-md:hidden" style={{ left: "-66%", top: "34%", width: u(56) }}>
@@ -311,7 +312,7 @@ export default function OutfitStudio() {
                 const p = look[k];
                 return p ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img key={p.id} data-slot={k} src={pic(p)} alt={p.name} draggable={false} className="absolute h-auto drop-shadow-[0_8px_10px_rgb(46_28_18/.18)]" style={SLOT[k]} />
+                  <img key={p.id} data-slot={k} src={pic(p)} alt={garmentAlt(p.id)} draggable={false} className="absolute h-auto drop-shadow-[0_8px_10px_rgb(46_28_18/.18)]" style={SLOT[k]} />
                 ) : (
                   <div
                     key={k}
@@ -373,7 +374,7 @@ export default function OutfitStudio() {
                       style={{ aspectRatio: "1 / 1.08", borderRadius: u(3), padding: u(2), touchAction: "pan-y" }}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={pic(p)} alt="" draggable={false} className="pointer-events-none h-full w-auto object-contain" />
+                      <img src={pic(p)} alt={garmentAlt(p.id)} draggable={false} className="pointer-events-none h-full w-auto object-contain" />
                       <span
                         className={`absolute flex items-center justify-center rounded-full ${on ? "bg-olive text-cream" : "bg-white text-ink-soft shadow-sm"}`}
                         style={{ right: u(1.4), top: u(1.4), width: u(4.4), height: u(4.4), fontSize: u(3) }}
@@ -436,6 +437,7 @@ export default function OutfitStudio() {
               ref={(el) => { ghostEl.current = el; moveGhost(); }}
               src={pic(ghost)}
               alt=""
+              aria-hidden="true"
               className="pointer-events-none fixed left-0 top-0 z-[100] h-auto drop-shadow-[0_18px_24px_rgb(46_28_18/.35)]"
             />,
             document.body,

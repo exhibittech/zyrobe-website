@@ -1,5 +1,5 @@
 import type { GuideBody } from "@/components/guides/GuidePage";
-import { Checklist, GuideTable, Tip } from "@/components/guides/blocks";
+import { Checklist, GuideLink, GuideTable, Tip } from "@/components/guides/blocks";
 
 const body: GuideBody = {
   sections: [
@@ -18,10 +18,18 @@ const body: GuideBody = {
             head={["Place", "What the rain is like", "Dress for it"]}
             rows={[
               ["Mumbai", "Very heavy downpours, waterlogged streets and long commutes", "Waterproof footwear, quick-dry trousers or capris, and a spare set of clothes at work"],
-              ["Kerala", "Two rainy seasons and humidity for much of the year", "Breathable, quick-drying clothes and an umbrella in your bag every day"],
+              ["Pune", "Steady showers and drizzle, with cooler days", "A light waterproof jacket, quick-dry trousers and closed shoes with a good grip"],
+              ["Delhi", "Arrives around the end of June or early July; humid and sticky between sudden heavy showers", "Light quick-dry fabrics, shoes that can get wet and a compact umbrella"],
               ["Kolkata", "Sudden heavy showers between hot, sticky spells", "Light cotton blends that breathe, and sandals that can get wet"],
+              ["Kerala", "Two rainy seasons and humidity for much of the year", "Breathable, quick-drying clothes and an umbrella in your bag every day"],
+              ["Chennai", "Most of its rain comes later, from about October to December", "Quick-dry clothes, waterproof footwear and a spare set at work during those months"],
+              ["Bengaluru", "Frequent showers, often in the evening, with cooler air", "A light waterproof layer, and closed shoes with a good grip for wet roads"],
+              ["Hyderabad", "Heavy showers in bursts between humid days", "Quick-dry tops, shoes that can get wet and an umbrella in your bag"],
             ]}
           />
+          <p>
+            Travelling in the rains? Our <GuideLink href="/guides/kerala-packing-list">Kerala packing list</GuideLink> and <GuideLink href="/guides/goa-packing-list">Goa packing list</GuideLink> both cover the monsoon.
+          </p>
         </>
       ),
     },
@@ -129,6 +137,9 @@ const body: GuideBody = {
           <Tip>
             <p>Before the rains start, move the clothes you won’t need until winter to a higher, drier shelf or a closed box with a moisture absorber.</p>
           </Tip>
+          <p>
+            Note which shelf or box holds the clothes you moved out of reach with the <GuideLink href="/features/clothes-storage-tracker">clothes storage tracker</GuideLink>, so you can find them again in winter.
+          </p>
         </>
       ),
     },

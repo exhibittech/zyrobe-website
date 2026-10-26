@@ -15,6 +15,7 @@ import { contentMetadata } from "@/components/content/meta";
 import Phone from "@/components/ui/Phone";
 import PlayButton from "@/components/ui/PlayButton";
 import { FEATURES, FEATURES_UPDATED, featureBySlug, type Feature } from "@/content/features";
+import { guideBySlug, type GuideEntry } from "@/content/guides";
 import { abs, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -62,10 +63,13 @@ export default async function FeaturePage({ params }: Props) {
   const label = f.name.startsWith("AI") ? f.name : f.name.toLowerCase();
   const creditsTitle = `Does the ${label} use credits?`;
   const faqTitle = `Questions about the ${label}`;
+  const guidesTitle = `Guides that go well with the ${label}`;
+  const guides = f.guides.map(guideBySlug).filter((g): g is GuideEntry => !!g);
   const toc = [
     ...f.sections.map((s) => ({ id: s.id, title: s.heading })),
     { id: "credits", title: creditsTitle },
     { id: "questions", title: faqTitle },
+    ...(guides.length ? [{ id: "guides", title: guidesTitle }] : []),
   ];
 
   return (
@@ -129,6 +133,20 @@ export default async function FeaturePage({ params }: Props) {
           <h2 id="questions">{faqTitle}</h2>
           <QaList items={f.faqs} />
         </section>
+
+        {guides.length ? (
+          <section aria-labelledby="guides">
+            <h2 id="guides">{guidesTitle}</h2>
+            <p>Practical guides for India where the {label} saves time:</p>
+            <ul>
+              {guides.map((g) => (
+                <li key={g.slug}>
+                  <a href={`/guides/${g.slug}`}>{g.title}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
       </Article>
 
       <section aria-labelledby="related" className="border-t border-line bg-paper/50 py-16 md:py-24">

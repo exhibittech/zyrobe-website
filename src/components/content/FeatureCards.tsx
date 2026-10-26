@@ -16,7 +16,7 @@ export default function FeatureCards({ slugs, headingLevel = 3 }: { slugs?: Feat
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={f.shots[0].src}
-                alt=""
+                alt={f.shots[0].alt}
                 loading="lazy"
                 decoding="async"
                 className="absolute left-1/2 top-6 w-[46%] -translate-x-1/2 rounded-t-[18px] shadow-[0_18px_40px_-16px_rgb(46_28_18/.45)] ring-[5px] ring-[#141210] transition-transform duration-700 ease-silk group-hover:-translate-y-1.5"
