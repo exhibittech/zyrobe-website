@@ -25,12 +25,14 @@ const PROBLEMS = [
 // Film timeline (seconds), mapped onto scroll.
 const PT = [1.0, 1.75, 2.45, 3.1, 3.7, 4.25, 4.75, 5.2, 5.6, 5.95, 6.25]; // unhurried at first, then piling up
 const REC = 7.2, L1 = 7.75, L1OUT = 9.55, L2 = 10.0, SUCK = 10.55, DIVE = 11.95, HIT = 13.33;
-const T_START = 0.55, T_END = HIT + 0.25;
+const T_START = 0.8, T_END = HIT + 0.25; // the first question pops as soon as the dark satin is in view
 const P_DIVE = 0.8; // the dive gets the last fifth of the scroll, the rest plays at film pace
 const timeAt = (p: number) => (p < P_DIVE ? L(T_START, DIVE, p / P_DIVE) : L(DIVE, T_END, (p - P_DIVE) / (1 - P_DIVE)));
 
 const BAND_MASK = "linear-gradient(112deg, transparent 22%, rgba(0,0,0,.55) 38%, #000 50%, rgba(0,0,0,.55) 62%, transparent 78%)";
 const EDGE_MASK = "linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent)";
+// Feathered top edge (eased stops, so the fade has no visible line where it ends).
+const RISE_MASK = "linear-gradient(to bottom, transparent 0, rgba(0,0,0,.12) 7vh, rgba(0,0,0,.4) 14vh, rgba(0,0,0,.75) 21vh, #000 30vh)";
 const LINE1 = "So many questions.";
 const LINE2 = "One answer";
 
@@ -125,7 +127,7 @@ export default function Questions() {
         qWrap.style.transform = prev;
       };
 
-      const progress = ScrollTrigger.create({ trigger: section, start: "top 35%", end: "bottom bottom" });
+      const progress = ScrollTrigger.create({ trigger: section, start: "top 50%", end: "bottom bottom" });
 
       const letterIn = (s: HTMLElement, t: number) => {
         const e = E.out4(P(t, 0, 1));
@@ -257,10 +259,10 @@ export default function Questions() {
           ? { height: "auto" }
           : {
               height: "360vh",
-              // Overlap the hero's last 24vh and feather in, so its dark satin cross-fades into this one (no seam).
-              marginTop: "-24vh",
-              WebkitMaskImage: "linear-gradient(to bottom, transparent 0, #000 24vh)",
-              maskImage: "linear-gradient(to bottom, transparent 0, #000 24vh)",
+              // The hero is pinned for its last 60vh: this section rises over it straight away, soft-edged.
+              marginTop: "-60vh",
+              WebkitMaskImage: RISE_MASK,
+              maskImage: RISE_MASK,
             }
       }
     >

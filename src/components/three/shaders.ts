@@ -122,7 +122,7 @@ void main() {
 export const garmentFragment = /* glsl */ `
 uniform sampler2D uMap;
 uniform float uOpacity;
-uniform float uFog;     // 0 = in focus, 1 = lost in the haze at the back of the ring
+uniform float uFog;     // 0 = in focus, 1 = lost in the satin haze
 uniform float uBlur;    // mip bias: a cheap depth-of-field
 uniform float uBright;
 varying vec2 vUv;
@@ -162,17 +162,5 @@ void main() {
   vec2 m = smoothstep(vec2(0.0), vec2(0.08), uv) * smoothstep(vec2(1.0), vec2(0.92), uv);
   a *= m.x * m.y;
   gl_FragColor = vec4(0.18, 0.11, 0.07, a * uOpacity);
-}
-`;
-
-/** Soft contact shadow on the (invisible) floor under a look. */
-export const floorFragment = /* glsl */ `
-uniform float uOpacity;
-varying vec2 vUv;
-void main() {
-  vec2 p = (vUv - 0.5) * 2.0;
-  float d = length(p);
-  float a = pow(1.0 - smoothstep(0.0, 1.0, d), 1.8);
-  gl_FragColor = vec4(0.2, 0.13, 0.08, a * uOpacity);
 }
 `;
