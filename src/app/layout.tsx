@@ -3,7 +3,8 @@ import { Lato } from "next/font/google";
 import localFont from "next/font/local";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import JsonLd from "@/components/closing/JsonLd";
-import { COMPANY, CONTACT_EMAIL, PLAY_LIVE, PLAY_URL, PROMISE, SHORT_DESCRIPTION, SITE_URL } from "@/lib/site";
+import { COMPANY, SHORT_DESCRIPTION, SITE_URL } from "@/lib/site";
+import { DESCRIPTION, KEYWORDS, TITLE, pageAlternates, siteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 // Noto Serif Display (the launch film's display face), subset to the characters the site uses
@@ -26,24 +27,21 @@ const body = Lato({
   display: "swap",
 });
 
-const TITLE = `Zyrobe — ${PROMISE}`;
-const DESCRIPTION =
-  "Zyrobe keeps all your clothes in one app. Snap a photo and it sorts them, then try outfits on with AI, get looks from an AI stylist, plan your week and pack for trips.";
+const GSC = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
+const BING = process.env.NEXT_PUBLIC_BING_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: TITLE, template: "%s · Zyrobe" },
   description: DESCRIPTION,
   applicationName: "Zyrobe",
-  keywords: [
-    "Zyrobe", "wardrobe app", "digital wardrobe", "AI stylist", "virtual try-on", "outfit planner",
-    "closet organizer", "outfit ideas", "packing list", "what to wear", "fashion app India",
-  ],
+  keywords: KEYWORDS,
   authors: [{ name: COMPANY }],
   creator: COMPANY,
   publisher: COMPANY,
   category: "lifestyle",
-  alternates: { canonical: "/" },
+  // Inner pages set their own (pageAlternates("/path")); a page without it would point its canonical here.
+  alternates: pageAlternates("/"),
   openGraph: {
     type: "website",
     url: "/",
@@ -53,35 +51,16 @@ export const metadata: Metadata = {
     description: SHORT_DESCRIPTION,
   },
   twitter: { card: "summary_large_image", title: TITLE, description: SHORT_DESCRIPTION },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
   formatDetection: { telephone: false, email: false, address: false },
-};
-
-const appJsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#org`,
-      name: COMPANY,
-      url: SITE_URL,
-      email: CONTACT_EMAIL,
-      logo: `${SITE_URL}/icon-512.png`,
-    },
-    {
-      "@type": "MobileApplication",
-      name: "Zyrobe",
-      url: SITE_URL,
-      description: DESCRIPTION,
-      operatingSystem: "ANDROID",
-      applicationCategory: "LifestyleApplication",
-      image: `${SITE_URL}/opengraph-image.png`,
-      publisher: { "@id": `${SITE_URL}/#org` },
-      offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-      ...(PLAY_LIVE ? { installUrl: PLAY_URL, downloadUrl: PLAY_URL } : {}),
-    },
-    { "@type": "WebSite", name: "Zyrobe", url: SITE_URL, publisher: { "@id": `${SITE_URL}/#org` } },
-  ],
+  // Search Console / Bing Webmaster Tools ownership tags, only when the tokens are set at build time.
+  ...(GSC || BING
+    ? { verification: { ...(GSC ? { google: GSC } : {}), ...(BING ? { other: { "msvalidate.01": BING } } : {}) } }
+    : {}),
 };
 
 export const viewport: Viewport = {
@@ -94,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-IN" className={`${display.variable} ${body.variable}`}>
       <body>
-        <JsonLd data={appJsonLd} />
+        <JsonLd data={siteJsonLd()} />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

@@ -36,8 +36,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "How do I delete my account?",
-    a: "In the app, go to Profile > App Settings > Delete Account. Our privacy policy explains what is removed and when.",
-    link: { href: "/privacy#delete-account", label: "How account deletion works" },
+    a: "In the app, go to Profile > Personal Information > Delete Account and confirm. This permanently deletes your account and all of your data. You can also email us to ask for it, as our privacy policy explains.",
   },
   {
     q: "Who makes Zyrobe?",

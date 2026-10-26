@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 const mail = <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>;
+const deleteMail = <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Delete my Zyrobe account")}`}>{CONTACT_EMAIL}</a>;
 
 const sections: LegalSection[] = [
   {
@@ -83,8 +84,39 @@ const sections: LegalSection[] = [
     title: "6. Delete your Zyrobe account and data",
     body: (
       <>
-        <p>{"This section explains how to delete your Zyrobe account (operated by Exhibit Technologies Private Limited) and the data linked to it. We keep your data while your account is active. You can delete your account in the App under Profile > App Settings > Delete Account. Deleting your account permanently removes your profile, photos, AI results and wardrobe data from our servers. Backups are overwritten within 30 days. We may keep purchase and tax records for as long as the law requires."}</p>
-        <p>You can also request deletion without the App, by emailing {mail} from your registered email address, and we will complete it within 30 days.</p>
+        <p>{"You can delete your Zyrobe account and all of its data at any time. Zyrobe is made by Exhibit Technologies Private Limited. We keep your data only while your account is active."}</p>
+
+        <h3>Delete your account in the App</h3>
+        <ol>
+          <li>Open Zyrobe and go to <strong>Profile</strong>.</li>
+          <li>Tap <strong>Personal Information</strong>.</li>
+          <li>Scroll down, tap <strong>Delete Account</strong> and confirm.</li>
+        </ol>
+        <p>{"This cannot be undone."}</p>
+
+        <h3>Ask us to delete it, without the App</h3>
+        <p>
+          If you cannot use the App, email {deleteMail} from the email address on your account, with the subject
+          {" \u201cDelete my Zyrobe account\u201d"}. We delete your account and all of its data within 30 days and confirm by email.
+        </p>
+
+        <h3>What we delete</h3>
+        <p>{"Everything. When your account is deleted, we permanently remove:"}</p>
+        <ul>
+          <li>{"Your account details: name, email address, profile picture and sign-in details"}</li>
+          <li>{"All your photos: your clothes, the photo of yourself for try-on, and photos of your storage places"}</li>
+          <li>{"Everything the AI made for you: product photos, try-on images, outfit suggestions and stylist notes"}</li>
+          <li>{"Your wardrobe: items, categories, colours, tags, notes, storage locations, outfits and lookbooks"}</li>
+          <li>{"Your plans: calendar entries, weekly plans and trips"}</li>
+          <li>{"Your credits, plan details and purchase history in Zyrobe"}</li>
+        </ul>
+        <p>{"Copies in our daily backups are removed automatically within 30 days. Nothing is kept after that."}</p>
+
+        <h3>Before you delete: cancel your subscription</h3>
+        <p>{"Deleting your account does not cancel a Google Play subscription. To stop future payments, cancel it first in the Google Play app: tap your profile picture, then Payments & subscriptions > Subscriptions > Zyrobe > Cancel subscription. Unused credits are removed with your account."}</p>
+
+        <h3>Delete some of your data and keep your account</h3>
+        <p>{"You can delete single items at any time in the App: clothes, outfits, saved try-on looks, storage places, planned outfits and trips."}</p>
       </>
     ),
   },
@@ -126,7 +158,7 @@ export default function PrivacyPage() {
     <LegalPage
       path="/privacy"
       title="Privacy Policy"
-      updated="23 October 2026"
+      updated="26 October 2026"
       intro={<p>{'Zyrobe (the "App") is operated by Exhibit Technologies Private Limited ("we", "us"). This policy explains what information the App collects, how it is used, who processes it for us, and the choices you have. In short: your photos belong to you, they are never shown to other users, never sold, and never used for advertising.'}</p>}
       sections={sections}
     />

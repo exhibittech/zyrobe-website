@@ -143,6 +143,24 @@ html.lenis, html.lenis body { height: auto; }
     border-radius: 999px;
     background: var(--color-olive);
   }
+  .legal h3 { margin: 2rem 0 0.4rem; font-weight: 700; font-size: 1.02rem; color: var(--color-ink); }
+  .legal ol { margin: 0.9rem 0; padding-left: 0; list-style: none; counter-reset: step; }
+  .legal ol > li { counter-increment: step; padding-left: 2.1rem; }
+  .legal ol > li::before {
+    content: counter(step);
+    top: 0.15em;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--color-ink);
+    color: var(--color-cream);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+  }
   .legal strong { color: var(--color-ink); font-weight: 700; }
   .legal a { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-taupe); text-underline-offset: 3px; }
   .legal a:hover { text-decoration-color: var(--color-ink); }

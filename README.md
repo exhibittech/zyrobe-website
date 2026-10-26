@@ -68,3 +68,29 @@ bash deploy/deploy.sh --rollback  # back to the previous release
   `deploy/Caddyfile.reference` is a copy. `/_next/static` is cached for a year, `/media` for 7 days, pages revalidate.
 - Facts on the site (plans, prices, free credits) come from `src/lib/site.ts`; keep it in sync with
   `zyrobe-backend/deploy/plans.json` and the Play listing.
+
+## SEO and AI search
+
+- **What crawlers get:** `robots.txt` welcomes search engines and AI assistants by name (Googlebot, Bingbot, GPTBot,
+  ClaudeBot, PerplexityBot and others; `src/app/robots.ts`). `sitemap.xml` lists every page with its real last-change
+  date, built from the content registries in `src/content/` (`src/app/sitemap.ts`).
+- **Structured data:** one JSON-LD graph on every page (Organization, WebSite, MobileApplication with all prices
+  in INR) from `src/lib/seo.ts`, which also has `breadcrumbJsonLd`, `faqJsonLd` and `pageAlternates`. No ratings or
+  reviews until real ones exist.
+- **For AI assistants:** `/llms.txt` (summary and links, llmstxt.org format) and `/llms-full.txt` (every feature,
+  price, privacy fact and FAQ answer) are generated at build time from `src/lib/site.ts`, the FAQ and the registries
+  (`src/lib/llms.ts`), so they never drift from the site.
+- **Every new page** must set `alternates: pageAlternates("/its/path")` in its metadata, or it inherits the home
+  page's canonical. Add it to its registry in `src/content/` with a real `updated` date.
+
+Manual follow-ups (need the owner's accounts):
+
+1. **Google Search Console:** add the domain property `zyrobe.com` (verify with a DNS TXT record in Cloudflare),
+   or a URL-prefix property verified by the meta tag: build with `NEXT_PUBLIC_GSC_VERIFICATION=<token>`.
+   Then submit `https://zyrobe.com/sitemap.xml`.
+2. **Bing Webmaster Tools:** import the site from Search Console, or verify with
+   `NEXT_PUBLIC_BING_VERIFICATION=<token>` at build time. Submit the sitemap there too (Bing also feeds Copilot
+   and DuckDuckGo).
+3. **After each deploy:** `bash deploy/indexnow.sh` pings Bing, Yandex and the other IndexNow engines with every URL
+   in the live sitemap (or `bash deploy/indexnow.sh /faq /guides/x` for just those pages). The key file is
+   `public/91cb96526f95441eb5a9e0bd1ec7b8a5.txt`; keep it in sync with the script.
