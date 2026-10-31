@@ -2,7 +2,7 @@
 
 Written 26 October 2026. Audience: India first (city level), then global English searchers, plus AI answer engines (ChatGPT, Perplexity, Gemini, Google AI Overviews).
 
-Product state to respect in every word: Zyrobe is an Android app for India, 18+, **not yet live on Google Play** ("coming soon"). We never claim ratings, user counts, awards or "best". Sources of truth for facts: `src/lib/site.ts`, `src/components/closing/faq.ts`, `src/content/*.ts`, `../play-store-assets/store-listing.txt`.
+Product state to respect in every word: Zyrobe is an Android app for India, 18+, **live on Google Play** (since October 2026). We never claim ratings, user counts, awards or "best". Sources of truth for facts: `src/lib/site.ts`, `src/components/closing/faq.ts`, `src/content/*.ts`, `../play-store-assets/store-listing.txt`.
 
 ## 1. What this is based on (and what it is not)
 
@@ -37,7 +37,7 @@ Reading of the market:
 2. **One primary keyword per page, never shared.** Secondary keywords may overlap in meaning but are not used as another page's primary (section 5 lists the guardrails).
 3. **Answer first.** The first sentence under every H1 answers the page's main question in plain words (this is what AI answer engines quote). H2s are questions or tasks; the first paragraph under each answers it. Tables and short lists carry the facts.
 4. **India modifiers where they are true.** "India", "Indian" and city names appear where the page is really about India (festivals, monsoon, office climate, destinations). City names are used as **sections and table rows inside useful guides**, never as swapped-name pages.
-5. **No claims we cannot support.** No "best", no ratings or counts, no features we do not have (for example, we do not say the app recognises sarees or specific garments; it notes type and colour). While `PLAY_LIVE` is off, no page targets "download" or "Play Store" intent.
+5. **No claims we cannot support.** No "best", no ratings or counts, no features we do not have (for example, we do not say the app recognises sarees or specific garments; it notes type and colour). The app is live on Google Play, so "download" and "Play Store" intent belongs on the home page and download sections only; guides stay informational.
 6. **Plain voice.** Short sentences, no stuffing. If a keyword makes a sentence worse, the sentence wins.
 
 ## 3. Keyword clusters
@@ -262,7 +262,7 @@ No slugs or URLs changed. No image markup or `alt` text was touched. `Hero.tsx` 
 **AI answer engines (no single dashboard exists):**
 
 1. In GA4, look at sessions by source for `chatgpt.com`, `perplexity.ai`, `gemini.google.com`, `copilot.microsoft.com`, `claude.ai`; landing pages tell you what they cite. Many AI visits arrive with no referrer, so treat the count as a floor.
-2. Once a month, ask each assistant the same ten questions (examples: "What is Zyrobe?", "Is there a wardrobe app with an AI stylist in India?", "What should I pack for Goa in the monsoon?", "What should I wear to a mehendi?", "What fabrics are best for the monsoon in India?"). Record whether Zyrobe is named, whether a zyrobe.com page is cited, and whether the facts (price, Android, India, not yet live) are correct. Wrong facts get fixed in `site.ts`, `faq.ts` and `llms.txt`, then re-checked.
+2. Once a month, ask each assistant the same ten questions (examples: "What is Zyrobe?", "Is there a wardrobe app with an AI stylist in India?", "What should I pack for Goa in the monsoon?", "What should I wear to a mehendi?", "What fabrics are best for the monsoon in India?"). Record whether Zyrobe is named, whether a zyrobe.com page is cited, and whether the facts (price, Android, India, live on Google Play) are correct. Wrong facts get fixed in `site.ts`, `faq.ts` and `llms.txt`, then re-checked.
 3. Check Google AI Overviews by searching the same questions in an India-located browser; note whether the guides are cited.
 
 **Honest limits:** with a new domain and an unlaunched app, the first 8 to 12 weeks are mostly impressions and indexing, not traffic. Judge success first by indexed pages, impressions on the guide queries, and correct brand facts in AI answers; clicks come after.

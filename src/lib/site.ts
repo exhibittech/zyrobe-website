@@ -3,8 +3,6 @@
 
 export const PLAY_PACKAGE = "com.exhibit.zyrobeapp";
 export const PLAY_URL = `https://play.google.com/store/apps/details?id=${PLAY_PACKAGE}`;
-// Set at build time by deploy/deploy.sh (it checks whether the Play listing is public).
-export const PLAY_LIVE = process.env.NEXT_PUBLIC_PLAY_LIVE === "1";
 
 export const SITE_URL = "https://zyrobe.com";
 // Google Analytics 4 property "Zyrobe website" (account Zyrobe, Exhibit Technologies organization).

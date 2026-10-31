@@ -1,3 +1,4 @@
+import PlayButton from "@/components/ui/PlayButton";
 import { COMPANY, CONTACT_EMAIL, TAGLINE } from "@/lib/site";
 
 const cols = [
@@ -15,6 +16,7 @@ export default function Footer({ onHome = true }: { onHome?: boolean }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/media/brand/logo-sm.webp" alt="Zyrobe" width={520} height={176} loading="lazy" className="h-9 w-auto" />
           <p className="mt-4 font-serif text-xl font-light italic text-ink-soft">{TAGLINE}</p>
+          <PlayButton className="mt-6" />
         </div>
         {cols.map((c) => (
           <nav key={c.title} aria-label={c.title}>
@@ -37,7 +39,7 @@ export default function Footer({ onHome = true }: { onHome?: boolean }) {
       <div className="border-t border-line">
         <div className="wrap flex flex-col gap-2 py-6 text-sm text-muted md:flex-row md:justify-between">
           <p>© {new Date().getFullYear()} {COMPANY}. Zyrobe is a product of Exhibit Technologies.</p>
-          <p>Android app · India</p>
+          <p>Android app on Google Play · India</p>
         </div>
       </div>
     </footer>

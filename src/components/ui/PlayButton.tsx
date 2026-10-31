@@ -1,4 +1,4 @@
-import { PLAY_LIVE, PLAY_URL } from "@/lib/site";
+import { PLAY_URL } from "@/lib/site";
 
 type Props = { tone?: "dark" | "light"; className?: string; size?: "md" | "lg" };
 
@@ -13,14 +13,15 @@ function PlayGlyph({ className = "" }: { className?: string }) {
   );
 }
 
-/** Google Play call to action. Before the listing is public it says "Coming soon" and points to #download. */
+/** "Get it on Google Play" call to action; opens the Zyrobe listing. */
 export default function PlayButton({ tone = "dark", className = "", size = "md" }: Props) {
   const dark = tone === "dark";
   const big = size === "lg";
   return (
     <a
-      href={PLAY_LIVE ? PLAY_URL : "#download"}
-      {...(PLAY_LIVE ? { target: "_blank", rel: "noopener" } : {})}
+      href={PLAY_URL}
+      target="_blank"
+      rel="noopener"
       className={`group inline-flex items-center gap-3 rounded-full transition-[transform,box-shadow,background-color] duration-500 ease-silk hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-olive ${
         big ? "py-3.5 pl-5 pr-7" : "py-3 pl-4 pr-6"
       } ${
@@ -32,7 +33,7 @@ export default function PlayButton({ tone = "dark", className = "", size = "md" 
       <PlayGlyph className={big ? "h-7 w-7" : "h-6 w-6"} />
       <span className="flex flex-col text-left leading-none">
         <span className={`font-sans ${big ? "text-[0.7rem]" : "text-[0.62rem]"} uppercase tracking-[0.18em] opacity-70`}>
-          {PLAY_LIVE ? "Get it on" : "Coming soon to"}
+          Get it on
         </span>
         <span className={`mt-1 font-sans font-bold ${big ? "text-xl" : "text-lg"} tracking-tight`}>Google Play</span>
       </span>

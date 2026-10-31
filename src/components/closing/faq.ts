@@ -38,7 +38,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Where can I get Zyrobe?",
-    a: "Zyrobe is an Android app, launching first in India on Google Play.",
+    a: "Zyrobe is an Android app, available on Google Play in India.",
   },
   {
     q: "Who can use Zyrobe?",

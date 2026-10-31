@@ -1,14 +1,12 @@
 // Search and AI-answer data: metadata defaults, the JSON-LD graph and the facts behind llms.txt.
 // Facts only from src/lib/site.ts, the Play listing (play-store-assets/store-listing.txt), the FAQ and
-// the privacy policy. No ratings, reviews or user counts: Zyrobe has none published yet.
+// the privacy policy. No ratings, reviews or user counts: this site publishes none.
 
 import type { Faq } from "@/components/closing/faq";
 import {
   COMPANY,
   CONTACT_EMAIL,
   PLANS,
-  PLAY_LIVE,
-  PLAY_PACKAGE,
   PLAY_URL,
   PROMISE,
   SHORT_DESCRIPTION,
@@ -56,7 +54,7 @@ export const AVAILABILITY = {
   platform: "Android",
   country: "India",
   minAge: 18,
-  status: PLAY_LIVE ? `Available on Google Play in India: ${PLAY_URL}` : `Launching on Google Play in India soon (package ${PLAY_PACKAGE}).`,
+  status: `Available on Google Play in India: ${PLAY_URL}`,
 };
 
 /** What the app does, in the Play listing's words (also the JSON-LD featureList). */
@@ -148,7 +146,8 @@ function offers() {
     priceCurrency: "INR",
     eligibleRegion: IN,
     seller: { "@id": ORG_ID },
-    ...(PLAY_LIVE ? { availability: "https://schema.org/InStock", url: PLAY_URL } : {}),
+    availability: "https://schema.org/InStock",
+    url: PLAY_URL,
   };
   return [
     { "@type": "Offer", name: "Free download", description: `Includes ${SIGNUP_FREE_CREDITS} free credits for every new account.`, price: "0", ...base },
@@ -197,7 +196,7 @@ export function siteJsonLd() {
           areaServed: "IN",
           availableLanguage: ["en"],
         },
-        ...(PLAY_LIVE ? { sameAs: [PLAY_URL] } : {}),
+        sameAs: [PLAY_URL],
       },
       {
         "@type": "WebSite",
@@ -236,7 +235,9 @@ export function siteJsonLd() {
         publisher: { "@id": ORG_ID },
         author: { "@id": ORG_ID },
         offers: offers(),
-        ...(PLAY_LIVE ? { installUrl: PLAY_URL, downloadUrl: PLAY_URL, sameAs: [PLAY_URL] } : {}),
+        installUrl: PLAY_URL,
+        downloadUrl: PLAY_URL,
+        sameAs: [PLAY_URL],
       },
     ],
   };

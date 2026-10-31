@@ -8,7 +8,7 @@ import { GUIDES } from "@/content/guides";
 import type { PageEntry } from "@/content/types";
 import { AI_POLICY } from "@/lib/aiPolicy";
 import { AVAILABILITY, DESCRIPTION, FEATURES, PRICING, PRIVACY_FACTS, abs } from "@/lib/seo";
-import { COMPANY, CONTACT_EMAIL, PLANS, PLAY_LIVE, PLAY_PACKAGE, PLAY_URL, PROMISE, SHORT_DESCRIPTION, SIGNUP_FREE_CREDITS, SITE_URL, TAGLINE } from "@/lib/site";
+import { COMPANY, CONTACT_EMAIL, PLANS, PLAY_PACKAGE, PLAY_URL, PROMISE, SHORT_DESCRIPTION, SIGNUP_FREE_CREDITS, SITE_URL, TAGLINE } from "@/lib/site";
 
 const link = (title: string, path: string, note?: string) => `- [${title}](${abs(path)})${note ? `: ${note}` : ""}`;
 const entries = (base: string, list: PageEntry[]) => list.map((p) => link(p.title, `${base}/${p.slug}`, p.description));
@@ -71,7 +71,7 @@ export function llmsTxt(): string {
     "",
     "## Optional",
     link("Full facts for AI assistants", "/llms-full.txt", "every feature, price, privacy fact and FAQ answer as plain text"),
-    ...(PLAY_LIVE ? [`- [Zyrobe on Google Play](${PLAY_URL}): download the Android app`] : []),
+    `- [Zyrobe on Google Play](${PLAY_URL}): download the Android app`,
     "",
   ].join("\n");
 }
@@ -102,7 +102,7 @@ export function llmsFullTxt(): string {
   out.push("", "## Privacy and your data", ...PRIVACY_FACTS.map((p) => `- ${p}`), `- Full policy: ${abs("/privacy")}`);
 
   out.push("", "## Good to know", "- AI images (product photos and try-ons) are previews. They may not match exactly how clothes look or fit in real life.", "- Outfit ideas, weekly plans and trip outfits are built from the clothes you have added to Zyrobe.");
-  if (!PLAY_LIVE) out.push("- Zyrobe has not launched publicly yet, so it has no store ratings, reviews or user numbers. Any such figures are not from Zyrobe.");
+  out.push("- This site publishes no store ratings, reviews or user numbers for Zyrobe. Any such figures are not from Zyrobe.");
 
   out.push("", "## Frequently asked questions");
   for (const g of allFaqs()) {

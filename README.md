@@ -60,8 +60,8 @@ bash deploy/deploy.sh --rollback  # back to the previous release
 ```
 
 - Releases live in `/var/www/zyrobe-site/releases/<time>-<sha>`; `current` is a symlink, switched atomically. The last 5 are kept.
-- The script checks whether the Google Play listing is public and builds the button as "Get it on Google Play"
-  or "Coming soon to Google Play" accordingly. **Re-run it once Google approves the app.**
+- The app is live on Google Play, so every button reads "Get it on Google Play" and links to the listing
+  (`PLAY_URL` in `src/lib/site.ts`). There is no build flag for this any more.
 - Validate Caddy changes as the `caddy` user (`sudo -u caddy caddy validate --config /etc/caddy/Caddyfile`).
   Validating with plain `sudo` creates missing log files owned by root, and the next reload then fails.
 - Caddy config lives in the backend repo (`zyrobe-backend/deploy/caddy/Caddyfile`, reinstalled by its deploy);

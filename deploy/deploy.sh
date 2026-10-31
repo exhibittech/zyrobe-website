@@ -11,7 +11,6 @@ cd "$(dirname "$0")/.."
 
 VM=zyrobe-api ZONE=asia-south1-a PROJECT=zyrobe-production
 BASE=/var/www/zyrobe-site KEEP=5
-PLAY="https://play.google.com/store/apps/details?id=com.exhibit.zyrobeapp&hl=en_IN"
 ssh_vm() { gcloud compute ssh "$VM" --zone "$ZONE" --project "$PROJECT" --tunnel-through-iap --quiet --command "$1" 2> >(grep -v -i -E 'numpy|increasing_the_tcp|^$' >&2); }
 
 if [[ "${1:-}" == "--rollback" ]]; then
@@ -21,17 +20,12 @@ if [[ "${1:-}" == "--rollback" ]]; then
   exit 0
 fi
 
-# The Play button says "Get it on Google Play" only once the listing is public.
-code=$(curl -s -o /dev/null -w '%{http_code}' "$PLAY" || true)
-if [[ "$code" == 200 ]]; then export NEXT_PUBLIC_PLAY_LIVE=1; else export NEXT_PUBLIC_PLAY_LIVE=0; fi
-echo "Google Play listing: HTTP $code -> NEXT_PUBLIC_PLAY_LIVE=$NEXT_PUBLIC_PLAY_LIVE"
-
 [[ -d node_modules ]] || npm ci
 rm -rf out
 npx next build
 
 ID="$(date +%Y%m%d-%H%M%S)-$(git rev-parse --short HEAD)$(git diff --quiet HEAD -- src public || echo -dirty)"
-printf '{"release":"%s","play_live":%s}\n' "$ID" "$NEXT_PUBLIC_PLAY_LIVE" > out/version.json
+printf '{"release":"%s"}\n' "$ID" > out/version.json
 test -f out/index.html && test -f out/404.html
 
 TGZ="$(mktemp -d)/site.tgz"

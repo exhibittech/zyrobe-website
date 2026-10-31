@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NAV_LINKS, PLAY_LIVE, PLAY_URL } from "@/lib/site";
+import { NAV_LINKS, PLAY_URL } from "@/lib/site";
 
 /** `onHome={false}` on other pages: section links and the logo point back to the home page. */
 export default function Nav({ onHome = true }: { onHome?: boolean }) {
@@ -37,11 +37,12 @@ export default function Nav({ onHome = true }: { onHome?: boolean }) {
           ))}
         </ul>
         <a
-          href={PLAY_LIVE ? PLAY_URL : `${base}#download`}
-          {...(PLAY_LIVE ? { target: "_blank", rel: "noopener" } : {})}
+          href={PLAY_URL}
+          target="_blank"
+          rel="noopener"
           className="rounded-full bg-ink px-5 py-2.5 text-sm font-bold text-cream transition-transform duration-500 ease-silk hover:-translate-y-0.5"
         >
-          {PLAY_LIVE ? "Get the app" : "Coming soon"}
+          Get the app
         </a>
       </nav>
     </header>

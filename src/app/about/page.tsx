@@ -8,7 +8,7 @@ import { contentMetadata } from "@/components/content/meta";
 import { CREDIT_TABLE, FEATURES } from "@/content/features";
 import { abs, breadcrumbJsonLd } from "@/lib/seo";
 import {
-  COMPANY, CONTACT_EMAIL, PLANS, PLAY_LIVE, PLAY_PACKAGE, PLAY_URL, PROMISE, SIGNUP_FREE_CREDITS, TAGLINE, TOPUPS,
+  COMPANY, CONTACT_EMAIL, PLANS, PLAY_PACKAGE, PLAY_URL, PROMISE, SIGNUP_FREE_CREDITS, TAGLINE, TOPUPS,
 } from "@/lib/site";
 
 const UPDATED = "2026-10-26";
@@ -59,7 +59,7 @@ export default function AboutPage() {
     ["Promise", PROMISE],
     ["Made by", `${COMPANY}, India`],
     ["Platform", "Android, on Google Play"],
-    ["Availability", PLAY_LIVE ? "On Google Play in India" : "Launching first in India on Google Play (coming soon)"],
+    ["Availability", "On Google Play in India"],
     ["Who it is for", "People aged 18 and over"],
     ["Price", `Free to download. Plans from ${PLANS[0].price} ${PLANS[0].period}`],
     ["Free credits", `${SIGNUP_FREE_CREDITS} for every new account, valid for one month`],
@@ -95,11 +95,9 @@ export default function AboutPage() {
         <section aria-labelledby="quick-facts">
           <h2 id="quick-facts">Quick facts</h2>
           <DataTable head={["Fact", "Zyrobe"]} caption="Zyrobe quick facts" rows={facts} />
-          {PLAY_LIVE ? (
-            <p>
-              Get Zyrobe on <a href={PLAY_URL}>Google Play</a>.
-            </p>
-          ) : null}
+          <p>
+            Get Zyrobe on <a href={PLAY_URL}>Google Play</a>.
+          </p>
         </section>
 
         <section aria-labelledby="what-it-does">
