@@ -13,7 +13,7 @@ function PlayGlyph({ className = "" }: { className?: string }) {
   );
 }
 
-/** "Get it on Google Play" call to action; opens the Zyrobe listing. */
+/** Google Play call to action: the Play logo and "Google Play", nothing else; opens the Zyrobe listing. */
 export default function PlayButton({ tone = "dark", className = "", size = "md" }: Props) {
   const dark = tone === "dark";
   const big = size === "lg";
@@ -22,21 +22,17 @@ export default function PlayButton({ tone = "dark", className = "", size = "md" 
       href={PLAY_URL}
       target="_blank"
       rel="noopener"
+      aria-label="Zyrobe on Google Play"
       className={`group inline-flex items-center gap-3 rounded-full transition-[transform,box-shadow,background-color] duration-500 ease-silk hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-olive ${
-        big ? "py-3.5 pl-5 pr-7" : "py-3 pl-4 pr-6"
+        big ? "py-4 pl-6 pr-8" : "py-3 pl-4 pr-6"
       } ${
         dark
           ? "bg-ink text-cream shadow-[0_10px_30px_-10px_rgb(46_28_18/.6)] hover:bg-night"
           : "bg-paper/90 text-ink shadow-[0_10px_30px_-12px_rgb(46_28_18/.35)] ring-1 ring-line hover:bg-paper"
       } ${className}`}
     >
-      <PlayGlyph className={big ? "h-7 w-7" : "h-6 w-6"} />
-      <span className="flex flex-col text-left leading-none">
-        <span className={`font-sans ${big ? "text-[0.7rem]" : "text-[0.62rem]"} uppercase tracking-[0.18em] opacity-70`}>
-          Get it on
-        </span>
-        <span className={`mt-1 font-sans font-bold ${big ? "text-xl" : "text-lg"} tracking-tight`}>Google Play</span>
-      </span>
+      <PlayGlyph className={big ? "h-8 w-8" : "h-6 w-6"} />
+      <span className={`font-sans font-bold leading-none tracking-tight ${big ? "text-2xl" : "text-lg"}`}>Google Play</span>
     </a>
   );
 }
